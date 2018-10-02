@@ -1,23 +1,29 @@
 package com.food.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import java.util.LinkedList;
+import java.util.List;
 
-import com.food.models.ItemDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.food.dao.ItemDao;
+import com.food.models.Item;
 
 @RestController
 public class UserController {
 
-    @Autowired
-    private ItemDao itemDao;
-    
-    @RequestMapping(value = "/items", method = RequestMethod.GET)
-    public ResponseEntity<?> getItems() {
-         return new ResponseEntity<>(itemDao.findAll(), HttpStatus.OK);
-    }
-
+	  @Autowired
+	    private ItemDao itemDao;
+	    
+	    @RequestMapping(value = "/items", method = RequestMethod.GET)
+	    public  List<Item> getItems() {
+	    	List<Item> tempItem = new LinkedList<Item>();
+	    	tempItem = itemDao.findAllItems();
+	    	System.out.println(tempItem);
+	    	return tempItem ;
+	    }
    
    
 }

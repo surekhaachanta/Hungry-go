@@ -24,7 +24,7 @@ public class Item {
         this.id = id;
     }
 
-    public Item(int id, String title, String link,int price) {
+    public Item(int id,String title,String link,int price) {
         this.id = id;
         this.title = title;
         this.link = link;
@@ -41,7 +41,7 @@ public class Item {
 
     
    
-    public String getTilte() {
+    public String getTitle() {
         return title;
     }
 

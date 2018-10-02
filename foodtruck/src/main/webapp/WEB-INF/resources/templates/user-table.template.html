@@ -1,0 +1,28 @@
+<div class="col-md-4">
+    <div ng-if="$ctrl.items.length == 0">No Items</div>
+    <table ng-if="$ctrl.items.length != 0" class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>link</th>
+            <th>price</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in $ctrl.items">
+            <td>{{item.id}}</td>
+
+            <td>{{item.title}}</td>
+
+            <td>{{item.price}}</td>
+          
+            <td>
+                <button id="orderButton{{user.id}}" type="button" class="btn btn-danger" ng-click="$ctrl.order(user.id)">Order</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

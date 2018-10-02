@@ -21,7 +21,7 @@ Open the src/main/resources/application.properties file and set your own configu
 
 2 . Install the dependencies by running:
 
-3 . Run the application using:
+3 . Run the application in eclipse using:
 ```
 right Click on project 
 -Run as configuration for the first time

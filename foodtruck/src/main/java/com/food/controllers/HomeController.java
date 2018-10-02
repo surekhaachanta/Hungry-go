@@ -20,4 +20,9 @@ public class HomeController {
     public String menuDirext() {
        return "menu";
     }
+    
+    @RequestMapping(value = "/aboutus")
+    public String aboutusDirext() {
+       return "aboutus";
+    }
 }

@@ -50,12 +50,10 @@ public class ItemDaoImpl implements ItemDao{
 					  String title = rs.getString("title");
 					  String link = rs.getString("link");
 					  int price = rs.getInt("price");
-					  System.out.println(i+title+link+price);
 					  Item item = new Item(i,title,link,price);
 
 					  tempItem.add(item);
 					}
-				   System.out.println("hereee"+tempItem);
 				   return tempItem;
 				}
 				catch(Exception e)

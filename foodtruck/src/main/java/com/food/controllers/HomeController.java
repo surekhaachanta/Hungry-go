@@ -25,4 +25,9 @@ public class HomeController {
     public String aboutusDirext() {
        return "aboutus";
     }
+    
+    @RequestMapping(value = "/login")
+    public String loginDirext() {
+       return "login";
+    }
 }

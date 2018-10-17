@@ -3,17 +3,28 @@
 <head>
 <title>Hungry Go</title>
 <!-- AngularJS -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="./webjars/jquery/2.2.4/jquery.js"></script>
+    <!-- AngularJS -->
+    <script src="./webjars/angularjs/1.5.7/angular.js"></script>
+    <script src="./webjars/angularjs/1.5.7/angular-route.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.6/css/bootstrap-theme.css"/>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/app.css"/>
+    <script src="/resources/js/app.js"></script>
+    <script src="/resources/js/user-table/user-table.module.js"></script>
+    <script src="/resources/js/user-table/user-table.component.js"></script>
+    <script src="/resources/js/user-crud-app/user-crud-app.module.js"></script>
+    <script src="/resources/js/user-crud-app/user-crud-app.component.js"></script>
+    <script src="/resources/js/core/user/user.module.js"></script>
+    <script src="/resources/js/core/user/user.service.js"></script>
 <style>
 * {box-sizing: border-box;}
 
 body {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -21,7 +32,6 @@ body {
   overflow: hidden;
   background-color: #e9e9e9;
 }
-
 .topnav a {
   float: left;
   display: block;
@@ -84,39 +94,36 @@ body {
     border: 1px solid #ccc;  
   }
   
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;}
+
 </style>
 </head>
 <body>
 <header style="background: #cee9ed;">
 <img src="/resources/images/Logo2.jpg" alt="Logo" style="height:200px;width:1000px;display: block; margin-left: auto; margin-right: auto;width: 50%;"></img>
 </header>
-<div class="topnav">
-  <a class="active" href="index">Home</a>
-  <a href="menu">Menu</a>
-  <a href="aboutus">About Us</a>
-  <a href="contact">Contact</a>
-  <a href="login">Login</a>
-  <div class="search-container">
-   
+
+<div class="container">
+    <form method="POST" action="/loginSubmit">
+
+<table>
+  <tr>
+    <td>User Name</td>
+    <td><input type="text" name="userName" /></td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td><input type="password" name="password" /></td>
+  </tr>
+  <tr>
+    <td><button class="btn btn-lg btn-primary btn-block" type="submit">Login</button></td>
+  </tr>
+</table>
+
+
+    </form>
   </div>
-</div>
-<div>
-<img src="/resources/images/food1.png" style="display: block;
-float:left"></img>
-<div style="display: block;
-float:left;width:643px;height:500px;font-size:300%; background-color: lightblue;font-family: Comic Sans MS, cursive, serif;color:white;">
-Now Serving Your Favorite Food!!
-At Your Door Step!!!<br/>
-Order Now!!!
-<a href="menu"><button  type="button"
-						class="btn">Order Now</button></a>
-</div>
-</div>
+  
+
 </body>
 
 </html>

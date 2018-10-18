@@ -30,30 +30,5 @@ public class UserController {
 	    	tempItem = itemDao.findAllItems();
 	    	return tempItem ;
 	    }
-	    
-	    @RequestMapping(value = "/feedback", method = RequestMethod.POST)
-	    public  void sendMail() {
-	    	System.out.println("mail");
-	    	 Properties props = new Properties();
-	    	   props.put("mail.smtp.com" , "smtp.gmail.com");
-	    	   Session session  = Session.getDefaultInstance( props , null);
-	    	   String to = "999surru@gmail.com";
-	    	   String from = "achantasurekha@gmail.com";
-	    	   String subject = "Feedback From Hungry Go...";
-	    	   Message msg = new MimeMessage(session);
-	    	    try {
-	    	      msg.setFrom(new InternetAddress(from));
-	    	      msg.setRecipient(Message.RecipientType.TO , new InternetAddress(to));
-	    	      msg.setSubject(subject);
-	    	      msg.setText("Working fine..!");
-	    	    }  catch(Exception exc) {
-	    	      System.out.println(exc.getMessage());   
-	    	    }
-	    	 }
-	    
-	    
-	    
-
-		
 		
 }

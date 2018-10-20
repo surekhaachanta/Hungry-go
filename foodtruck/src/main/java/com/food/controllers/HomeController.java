@@ -1,9 +1,12 @@
 package com.food.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.food.models.User;
 
 @Controller
 public class HomeController {
@@ -34,8 +37,9 @@ public class HomeController {
     }
     
     @RequestMapping(value = "/loginSubmit", method = RequestMethod.POST)
-    public String loginSubmitDirext() {
-       return "indexUser";
+    public String loginSubmitDirext(@ModelAttribute("userName") String userName, @ModelAttribute("password") String password) {
+    	User user = new User();
+    	return "indexUser";
+    	
     }
-   
 }

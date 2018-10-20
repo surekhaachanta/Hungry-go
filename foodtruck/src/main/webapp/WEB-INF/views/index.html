@@ -3,28 +3,34 @@
 <head>
 <title>Hungry Go</title>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script> 
-
-$(function(){
-  $("#header").load("/resources/header.html"); 
-});
-
-</script> 
+<link rel="stylesheet" href="/resources/css/headerStyle.css">
+<script>
+	$(function() {
+		$("#header").load("/resources/header.html");
+	});
+</script>
 </head>
 <body>
 	<div id="header"></div>
-<div>
-<img src="/resources/images/food1.png" style="display: block;
-float:left"></img>
-<div style="display: block;
-float:left;width:643px;height:500px;font-size:300%; background-color: lightblue;font-family: Comic Sans MS, cursive, serif;color:white;">
-Now Serving Your Favorite Food!!
-At Your Door Step!!!<br/>
-Order Now!!!
-<a href="menu"><button  type="button"
-						class="btn">Order Now</button></a>
-</div>
-</div>
+	<div class="topnav">
+		<ul class="tab">
+			<li class="active"><a href="/">Home</a></li>
+			<li><a href="menu">Menu</a></li>
+			<li><a href="aboutus">About Us</a></li>
+			<li><a href="contact">Contact</a></li>
+			<li><a href="login">Login</a></li>
+		</ul>
+	</div>
+	<div>
+		<img src="/resources/images/food1.png"
+			style="display: block; float: left"></img>
+		<div
+			style="display: block; float: left; width: 643px; height: 500px; font-size: 300%; background-color: lightblue; font-family: Comic Sans MS, cursive, serif; color: white;">
+			Now Serving Your Favorite Food!! At Your Door Step!!!<br /> Order
+			Now!!! <a href="menu"><button type="button" class="btn">Order
+					Now</button></a>
+		</div>
+	</div>
 </body>
 
 </html>

@@ -4,19 +4,31 @@
 <title>Hungry Go</title>
 <!-- AngularJS -->
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script> 
+<script>
+	$(function() {
+		$("#header").load("/resources/header.html");
 
-$(function(){
-	  $("#header").load("/resources/header.html");
- 
-});
-</script> 
+	});
+	
+</script>
+<link rel="stylesheet" href="/resources/css/headerStyle.css">
 </head>
 <body>
 	<div id="header"></div>
-<div>
-<user-crud-app></user-crud-app>
-</div>
+	<div class="topnav">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li  class="active"><a href="menu">Menu</a></li>
+			<li><a href="aboutus">About Us</a></li>
+			<li><a href="contact">Contact</a></li>
+			<li><a href="login">Login</a></li>
+		</ul>
+	</div>
+		<div>
+	
+
+		<user-crud-app></user-crud-app>
+	</div>
 </body>
 
 </html>

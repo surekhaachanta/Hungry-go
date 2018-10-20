@@ -26,20 +26,14 @@ public class ItemDaoImpl implements ItemDao{
 		List<Item> tempItem = new LinkedList<Item>();
 		try {
 
-//			Properties props = new Properties();
-//			FileInputStream in = new FileInputStream("/resources/db.properties");
-//			props.load(in);
-//			in.close();
-
-//			String driver = props.getProperty("jdbc.driver");
-//			String myUrl = props.getProperty("jdbc.url");
-//			String username = props.getProperty("jdbc.username");
-//			String password = props.getProperty("jdbc.password");
-			
-//			String driver="com.mysql.jdbc.Driver";
-			String myUrl="jdbc:mysql://localhost:3306/usercrud?autoReconnect=true&useSSL=false";
-			String username="root";
-			String password="linuxconfig.org";
+			Properties props = new Properties();
+			FileInputStream in = new FileInputStream("db.properties");
+			props.load(in);
+			in.close();
+			String driver = props.getProperty("jdbc.driver");
+			String myUrl = props.getProperty("jdbc.url");
+			String username = props.getProperty("jdbc.username");
+			String password = props.getProperty("jdbc.password");
 			conn = DriverManager.getConnection(myUrl, username, password);
 			
 			try {

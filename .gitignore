@@ -1,0 +1,8 @@
+.classpath
+.project
+.settings
+target/
+foodtruck/.idea/compiler.xml
+foodtruck/.idea/encodings.xml
+foodtruck/.idea/misc.xml
+foodtruck/.idea/workspace.xml

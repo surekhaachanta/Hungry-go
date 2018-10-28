@@ -7,20 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import com.food.dao.ItemDataService;
 import com.food.models.Item;
-import com.food.dao.ItemDao;
 
 @Service
 public class CacheServiceImpl implements CacheService {
 	@Autowired
-	private ItemDao itermDao;
+	private ItemDataService itemDataService;
 	
 	@Override
 	@Cacheable("menuItems")
 	public List<Item> getAllItems() {
 		System.out.println("Iniside getAllItems");
 		List<Item> itemList = new ArrayList<>();
-		itermDao.findAllItems().forEach(itemList::add);
+		itemDataService.findAll().forEach(itemList::add);
 		return itemList;
 	}
 

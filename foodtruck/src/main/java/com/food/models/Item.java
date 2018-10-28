@@ -10,12 +10,17 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     @NotNull
     private String title;
+
     @NotNull
     private String link;
+
     @NotNull
-    private int price;
+    private Double price;
+
+    private String category;
 
     public Item() {
     }
@@ -24,7 +29,7 @@ public class Item {
         this.id = id;
     }
 
-    public Item(int id,String title,String link,int price) {
+    public Item(int id, String title, String link, Double price) {
         this.id = id;
         this.title = title;
         this.link = link;
@@ -39,8 +44,7 @@ public class Item {
         this.id = value;
     }
 
-    
-   
+
     public String getTitle() {
         return title;
     }
@@ -48,30 +52,41 @@ public class Item {
     public void setTitle(String value) {
         this.title = value;
     }
-    
-    
+
+
     public String getLink() {
         return link;
     }
+
     public void setLink(String value) {
         this.link = value;
     }
 
-    public int getPrice() {
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(int value) {
-        this.price = value;
+    public void setPrice(Double price) {
+        this.price = price;
     }
-    
+
     @Override
     public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", link='" + link + '\'' +
-                ", price='" + price + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("Item{");
+        sb.append("id=").append(id);
+        sb.append(", title='").append(title).append('\'');
+        sb.append(", link='").append(link).append('\'');
+        sb.append(", price=").append(price);
+        sb.append(", category='").append(category).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

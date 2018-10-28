@@ -43,7 +43,7 @@ public class ItemDaoImpl implements ItemDao{
 					  int i = rs.getInt("id");
 					  String title = rs.getString("title");
 					  String link = rs.getString("link");
-					  int price = rs.getInt("price");
+					  Double price = rs.getDouble("price");
 					  Item item = new Item(i,title,link,price);
 
 					  tempItem.add(item);

@@ -1,0 +1,30 @@
+
+ul {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+}
+
+.list {
+    display: flex;
+}
+
+.item {
+    margin-right: 0.5em;
+    flex: 1;
+    display: flex;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.price {
+    text-align: right;
+    font-size: 18px;
+}
+
+.item:after {
+    content: '';
+    border-bottom: dashed 1px black;
+    flex: 1;
+
+}

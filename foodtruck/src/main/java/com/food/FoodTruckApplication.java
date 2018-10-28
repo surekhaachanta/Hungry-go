@@ -6,9 +6,9 @@ import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
 @EnableCaching
-public class UserCrudApplication {
+public class FoodTruckApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserCrudApplication.class, args);
+		SpringApplication.run(FoodTruckApplication.class, args);
 	}
 }

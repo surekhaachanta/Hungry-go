@@ -5,12 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.food</groupId>
-	<artifactId>user-crud</artifactId>
+	<artifactId>Hungry-Go</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>user-crud</name>
-	<description>User CRUD Application</description>
+	<name>Hungry-Go</name>
+	<description>Hungry-Go Application</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

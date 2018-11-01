@@ -1,1 +1,0 @@
-angular.module('userCrudApp', ['userTable']);

@@ -1,34 +1,36 @@
-<html ng-app="app">
-<!-- This page uses AngularJS -->
-<head>
-<title>Hungry Go</title>
-<!-- AngularJS -->
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script>
-	$(function() {
-		$("#header").load("/resources/header.html");
-
-	});
-	
-</script>
-<link rel="stylesheet" href="/resources/css/headerStyle.css">
-</head>
-<body>
-	<div id="header"></div>
-	<div class="topnav">
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li  class="active"><a href="menu">Menu</a></li>
-			<li><a href="aboutus">About Us</a></li>
-			<li><a href="contact">Contact</a></li>
-			<li><a href="login">Login</a></li>
-		</ul>
-	</div>
-		<div>
-	
-
-		<user-crud-app></user-crud-app>
-	</div>
-</body>
-
-</html>
+<div ng-controller="menuCtrl" class="menu-page">
+    <div ng-repeat="(key, value) in menuItems">
+        <div ng-if="$even" class="category">
+            <h2>{{key}}</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <img ng-src="resources/images/category/{{key}}.jpg" height="200" width="200">
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li class="list"  ng-repeat="item in value">
+                            <i class='item'>{{item.title}}</i>
+                            <i class="price">{{item.price | currency:"$"}}</i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div ng-if="$odd" class="category">
+            <h2 class="col-md-7" style="text-align: right;">{{key}}</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul>
+                        <li class="list"  ng-repeat="item in value">
+                            <i class='item'>{{item.title}}</i>
+                            <i class="price">{{item.price | currency:"$"}}</i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img ng-src="resources/images/category/{{key}}.jpg" height="200" width="200">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -26,7 +26,7 @@ Open the src/main/resources/application.properties file and set your own configu
 right Click on project 
 -Run as configuration for the first time
 - click on Maven Build
-- set base as ${project_loc:user-crud}
+- set base as ${project_loc:Hungry-Go}
 - set goals:spring-boot:run
 
 

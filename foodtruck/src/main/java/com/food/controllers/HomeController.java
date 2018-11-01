@@ -12,13 +12,9 @@ public class HomeController {
 
     @RequestMapping(value = "/")
     public String homePage() {
-        return "index1";
-    }
-    
-    @RequestMapping(value = "/index")
-    public String homePageOld() {
         return "index";
     }
+    
     
     @RequestMapping(value = "/contact")
     public String redirect() {

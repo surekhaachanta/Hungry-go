@@ -60,29 +60,30 @@
         }
     }]);
 
-    app.controller('mainCtrl', ['$scope', 'appService', function ($scope, appService) {
+    app.controller('mainCtrl', ['$scope', 'appService',function ($scope, appService) {
         $scope.userLoggedIn = false;
 
-        $scope.login = function (loginForm) {
-            if (loginForm.$valid) {
-                appService.login(loginForm.userName.$viewValue, loginForm.password.$viewValue).then(function (res) {
+        $scope.login = function (user) {
+         
+                appService.login(user.userName, user.password).then(function (res) {
                     $scope.userLoggedIn = true;
                 });
-            }
+            
         };
 
-        $scope.register = function (registerForm) {
-            if (registerForm.$valid) {
+        $scope.register = function (newUser) {
+        	
                 var payload = {
-                    userName: registerForm.userName.$viewValue,
-                    password: registerForm.password.$viewValue,
-                    email: registerForm.email.$viewValue,
+                    userName: newUser.userName,
+                    email: newUser.email,
+                    password: newUser.password
                 };
                 console.log(payload);
                 appService.register(payload).then(function (res) {
+                	$scope.userLoggedIn = true;
                     console.log(res);
                 });
-            }
+            
         }
     }]);
 })();

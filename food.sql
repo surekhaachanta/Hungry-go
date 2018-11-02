@@ -12,6 +12,12 @@ CREATE TABLE `menu` (
   PRIMARY KEY (`id`)
 );
 
+CREATE TABLE `user` (
+  `user_Name` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY (`user_Name`)
+) ;
 
 INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (1,'Chicken','/resources/images/Food11',8.5, 'Burger');
 INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (2,'Veggie','/resources/images/Food11',6, 'Burger');

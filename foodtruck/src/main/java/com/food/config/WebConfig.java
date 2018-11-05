@@ -1,5 +1,8 @@
 package com.food.config;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -22,6 +25,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/views/");
         resolver.setSuffix(".html");
+        
         return resolver;
     }
 

@@ -19,7 +19,11 @@ public class HomeController {
     public String homePage() {
         return "index";
     }
-    
+
+    @RequestMapping(value = "/home")
+    public String homePageurl() {
+        return "index";
+    }
    
     @RequestMapping(value = "/contact")
     public String redirect() {

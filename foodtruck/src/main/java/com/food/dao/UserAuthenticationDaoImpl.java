@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.food.models.Item;
-import com.food.models.User;
 
 public class UserAuthenticationDaoImpl {
 	
@@ -17,6 +15,7 @@ public class UserAuthenticationDaoImpl {
 			Connection conn = null;
 			Statement st = null;
 			ResultSet rs = null;
+			@SuppressWarnings("unused")
 			String driver="com.mysql.jdbc.Driver";
 			String myUrl="jdbc:mysql://localhost:3306/usercrud?autoReconnect=true&useSSL=false";
 			String username="root";

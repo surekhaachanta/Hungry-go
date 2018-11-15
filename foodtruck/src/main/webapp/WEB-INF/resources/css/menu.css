@@ -17,6 +17,16 @@ ul {
     font-weight: 900;
 }
 
+.menu-area {
+	font-size: 18px;
+	color:white;
+}
+
+
+.qty {
+  width: 30px;
+}
+
 .price {
     text-align: right;
     font-size: 18px;

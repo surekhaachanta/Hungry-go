@@ -11,6 +11,8 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    private int qty;
+    
     @NotNull
     private String title;
 
@@ -28,14 +30,18 @@ public class Item {
     public Item(int id) {
         this.id = id;
     }
+    
 
-    public Item(int id, String title, String link, Double price) {
+    public Item(int id, String title, String link, Double price,String category,int qty) {
         this.id = id;
         this.title = title;
         this.link = link;
         this.price = price;
+        this.category= category;
+        this.qty= qty;
     }
-
+    
+    
     public long getId() {
         return id;
     }
@@ -69,6 +75,13 @@ public class Item {
     public void setCategory(String category) {
         this.category = category;
     }
+    
+    public int getQty() {
+		return qty;
+	}
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
 
     public Double getPrice() {
         return price;

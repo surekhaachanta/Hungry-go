@@ -30,6 +30,23 @@
         }).state('about', {
             url: '/about',
             templateUrl: 'resources/templates/aboutus.html'
+        }).state('cart', {
+            url: '/cart',
+            templateUrl: 'resources/templates/cart.html',
+            resolve: {
+                loadFiles: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load([{
+                        name: 'cart.ctrl',
+                        files: [
+                            'resources/css/app.css',
+                            'resources/js/cart/cartService.js',
+                            'resources/js/cart/cartController.js'
+                        ],
+                        cache: false
+                    }]);
+                }]
+            }
+            
         });
 
     });

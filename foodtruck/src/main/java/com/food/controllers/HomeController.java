@@ -1,16 +1,8 @@
 package com.food.controllers;
 
-import java.net.URISyntaxException;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.food.models.User;
-import com.food.service.CacheService;
 
 @Controller
 public class HomeController {
@@ -45,10 +37,15 @@ public class HomeController {
        return "login";
     }
     
-    @RequestMapping(value = "/loginSubmit", method = RequestMethod.POST)
-    public String loginSubmitDirext(@ModelAttribute("userName") String userName, @ModelAttribute("password") String password) {
-    	User user = new User();
-    	return "indexUser";
-    	
+    @RequestMapping(value = "/cart")
+    public String CartPage() {
+        return "cart";
     }
+    
+//    @RequestMapping(value = "/loginSubmit", method = RequestMethod.POST)
+//    public String loginSubmitDirext(@ModelAttribute("userName") String userName, @ModelAttribute("password") String password) {
+//    	User user = new User();
+//    	return "indexUser";
+//    	
+//    }
 }

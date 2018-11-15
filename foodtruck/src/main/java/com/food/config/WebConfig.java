@@ -1,8 +1,5 @@
 package com.food.config;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.web.WebAppConfiguration;

@@ -12,6 +12,19 @@ CREATE TABLE `menu` (
   PRIMARY KEY (`id`)
 );
 
+CREATE TABLE `order_Details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(75) DEFAULT NULL,
+  `qty` int(4) Default Null,
+   `category` varchar(100) DEFAULT NULL,
+  `total` DOUBLE(10,2) Default 0,
+  `user_name` varchar(20) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ;
+
 CREATE TABLE `user` (
   `user_Name` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,

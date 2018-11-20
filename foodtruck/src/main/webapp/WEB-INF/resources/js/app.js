@@ -30,6 +30,9 @@
         }).state('about', {
             url: '/about',
             templateUrl: 'resources/templates/aboutus.html'
+        }).state('checkout', {
+            url: '/checkout',
+            templateUrl: 'resources/templates/checkout.html'
         }).state('cart', {
             url: '/cart',
             templateUrl: 'resources/templates/cart.html',

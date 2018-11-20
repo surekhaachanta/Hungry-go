@@ -1,14 +1,13 @@
-<div ng-controller="cartCtrl" class="cart-area">
+<div ng-controller="cartCtrl" class="common-area">
 	<h2>Your Cart:</h2>
-      <ul ng-if="varShowCart">
-        <li class="animate-repeat" ng-repeat="item in carts">
-          <span>{{ item.qty + ' x ' + item.title + ' = ' + (getCost(item) | currency) }}</span>
-          <button class="btn-danger btn-xs" ng-click="removeItem(item);">Remove Item</button>
-          </br>
-          </br>
-        </li>
-      </ul>
-      <h3>Total: {{ getTotal() | currency}}</h3>
+	<ul ng-if="varShowCart">
+		<li class="animate-repeat" ng-repeat="item in carts"><span>{{
+				item.qty + ' x ' + item.title + ' '+ item.category + ' = ' +
+				(getCost(item) | currency) }}</span>
+			<button class="btn-danger btn-xs" ng-click="removeItem(item);">Remove
+				Item</button> </br> </br></li>
+	</ul>
+	<h3>Total: {{ getTotal() | currency}}</h3>
 	<button class="btn-danger" ng-click="clearCart();">Clear Cart</button>
-	<button class="btn-success" ng-click="">Check Out</button>
+	<button class="btn-success" ui-sref="checkout">Check Out</button>
 </div>

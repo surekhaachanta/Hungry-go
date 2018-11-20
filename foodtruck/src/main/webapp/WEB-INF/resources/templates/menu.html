@@ -1,12 +1,13 @@
 <div class="common-area">
-	<div ng-controller="menuCtrl" class="menu-page">
+	<div ng-controller="menuCtrl">
+	<div class="add-cart" ng-show="showDiv">Added to cart</div>
 			<div ng-repeat="(key, value) in menuItems">
 				<div ng-if="$even" class="category">
 					<h2>{{key}}</h2>
 					<div class="row">
 						<div class="col-md-2">
-							<img ng-src="resources/images/category/{{key}}.jpg" height="130"
-								width="160">
+							<img ng-src="resources/images/category/{{key}}.jpg" height="110"
+								width="140">
 						</div>
 						<div class="col-md-10">
 							<ul>
@@ -14,7 +15,7 @@
 									<i class="price">{{item.price | currency:"$"}}</i><i>&nbsp</i>
 									<i class="qty"> <input type="number" ng-init="item.qty=1"
 										required ng-model="item.qty" class="qty">
-								</i><i>&nbsp</i><i><button class="btn-primary"
+								</i><i>&nbsp</i><i><button class="btn-success"
 											ng-click="addItem(item)">Add to Cart</button></i></li>
 							</ul>
 						</div>
@@ -29,15 +30,17 @@
 									<i class="price">{{item.price | currency:"$"}}</i><i>&nbsp</i>
 									<i class="qty"> <input type="number" ng-init="item.qty=1"
 										required ng-model="item.qty" class="qty">
-								</i><i>&nbsp</i><i><button class="btn-primary"
+								</i><i>&nbsp</i><i><button class="btn-success"
 											ng-click="addItem(item)">Add to Cart</button></i></li>
 							</ul>
 						</div>
 						<div class="col-md-1">
-							<img ng-src="resources/images/category/{{key}}.jpg" height="130"
-								width="160">
+							<img ng-src="resources/images/category/{{key}}.jpg" height="110"
+								width="140">
 						</div>
 					</div>
+					<br>
+					<br>
 				</div>
 			</div>
 	</div>

@@ -2,9 +2,19 @@
 	position: absolute;
 	top: 132px;
 	left: 8%;
-	color: white;
+	color: #919aa1;
 }
 
+.cart-area {
+	font-size: 18px;
+	color:white;
+}
+
+.btn-primary{
+	height:31;
+	padding-top: 0;
+	margin-top: 0;
+}
 .centered {
 	position: absolute;
 	top: 30%;

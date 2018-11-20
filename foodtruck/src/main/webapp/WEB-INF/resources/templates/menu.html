@@ -15,7 +15,7 @@
 									<i class="qty"> <input type="number" ng-init="item.qty=1"
 										required ng-model="item.qty" class="qty">
 								</i><i>&nbsp</i><i><button class="btn-primary"
-											ng-click="updateCart(item)">Add to Cart</button></i></li>
+											ng-click="addItem(item)">Add to Cart</button></i></li>
 							</ul>
 						</div>
 					</div>
@@ -23,17 +23,17 @@
 				<div ng-if="$odd" class="category">
 					<h2 class="col-md-10" style="text-align: right;">{{key}}</h2>
 					<div class="row">
-						<div class="col-md-8">
+						<div class="col-md-9">
 							<ul>
 								<li class="list" ng-repeat="item in value"><i class='item'>{{item.title}}</i>
 									<i class="price">{{item.price | currency:"$"}}</i><i>&nbsp</i>
 									<i class="qty"> <input type="number" ng-init="item.qty=1"
 										required ng-model="item.qty" class="qty">
 								</i><i>&nbsp</i><i><button class="btn-primary"
-											ng-click="saveCart(item)">Add to Cart</button></i></li>
+											ng-click="addItem(item)">Add to Cart</button></i></li>
 							</ul>
 						</div>
-						<div class="col-md-3">
+						<div class="col-md-2">
 							<img ng-src="resources/images/category/{{key}}.jpg" height="130"
 								width="160">
 						</div>

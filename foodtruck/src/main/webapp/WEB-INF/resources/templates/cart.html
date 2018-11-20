@@ -1,20 +1,14 @@
-<div ng-controller="cartCtrl" class="cart-page">
+<div ng-controller="cartCtrl" class="cart-area">
 	<h2>Your Cart:</h2>
-	<div>
-		<ul>
-			<div ng-if="cartItems" class="category">
-				<h2>{{key}}</h2>
-				<ul>
-					<li class="list" ng-repeat="cartItem in sessionData.cart.cartItem"
-						ng-show="sessionData.cart.cartItem.length>0 ">{{cartItem.title}}</i>
-						<i class="price">{{cartItem.qty}}</i><i>&nbsp</i> <i>&nbsp</i>
-						<button class="btn-danger btn-xs" ng-click="removeItem(cart);">Remove
-							Item</button> </br> </br></li>
-				</ul>
-			</div>
-		</ul>
-	</div>
-	<h3>Total: {{ cartItem.total| currency:"$"}}</h3>
+      <ul ng-if="varShowCart">
+        <li class="animate-repeat" ng-repeat="item in carts">
+          <span>{{ item.qty + ' x ' + item.title + ' = ' + (getCost(item) | currency) }}</span>
+          <button class="btn-danger btn-xs" ng-click="removeItem(item);">Remove Item</button>
+          </br>
+          </br>
+        </li>
+      </ul>
+      <h3>Total: {{ getTotal() | currency}}</h3>
 	<button class="btn-danger" ng-click="clearCart();">Clear Cart</button>
-	<button class="btn-success" ng-click="">Place Order</button>
+	<button class="btn-success" ng-click="">Check Out</button>
 </div>

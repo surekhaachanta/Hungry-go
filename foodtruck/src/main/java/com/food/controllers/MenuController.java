@@ -24,10 +24,12 @@ public class MenuController {
 		return cacheService.getAllItems();
 	}
 
-		@RequestMapping(value = "/order", method = RequestMethod.POST)
-	public void Order(@RequestBody List<Order> order) throws URISyntaxException {
+	@RequestMapping(value = "/order", method = RequestMethod.GET)
+	public void Order() throws URISyntaxException {
+
+		Order order=new Order();
+		System.out.println(order);
 		cacheService.order(order);
 	}
-	
-	
+
 }

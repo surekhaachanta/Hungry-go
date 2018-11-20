@@ -5,8 +5,10 @@
 
 	app.controller('cartCtrl', [
 			'$scope',
+			'cartService',
 			'$window',
-			function($scope, $window) {
+			'$state',
+			function($scope, service, $window, $state) {
 				$scope.cartss = [];
 				$scope.carts = [];
 				console.log("in cart");
@@ -30,39 +32,43 @@
 						return sum + $scope.getCost(item);
 					}, 0);
 					console.log('total: ' + total);
+					$window.sessionStorage.setItem("total", JSON
+							.stringify(total));
 					return total;
 				};
 
 				$scope.getTotalCount = function() {
 					$scope.cartss = JSON.parse($window.sessionStorage
-							.getItem("cart"));
+							.getItem("cart"))
+							|| [];
 					var count = 0;
 					for (var i = 0; i < $scope.cartss.length; i++) {
 						var item = $scope.cartss[i];
 						count += $scope.toNumber(item.qty);
-
 					}
+					console.log(count);
 					return count;
 				}
-				
-				 var findItemById = function(items, id) {
-			            return _.find(items, function(item) {
-			              return item.id === id;
-			            });
-			          };
-			          
-				$scope.changeQty=function(itemToAdd){
-					 var found = findItemById($scope.cartss, itemToAdd.id);
-			            if (found) {
-			              found.qty += itemToAdd.qty;
-			              $window.sessionStorage.setItem("cart",JSON.stringify($scope.carts));
 
-			            }
+				var findItemById = function(items, id) {
+					return _.find(items, function(item) {
+						return item.id === id;
+					});
+				};
+
+				$scope.changeQty = function(itemToAdd) {
+					var found = findItemById($scope.cartss, itemToAdd.id);
+					if (found) {
+						found.qty += itemToAdd.qty;
+						$window.sessionStorage.setItem("cart", JSON
+								.stringify($scope.carts));
+
+					}
 				}
-				
-				$scope.toNumber = function (value) {
-				    value = value * 1;
-				    return isNaN(value) ? 0 : value;
+
+				$scope.toNumber = function(value) {
+					value = value * 1;
+					return isNaN(value) ? 0 : value;
 				}
 
 				$scope.getCost = function(item) {
@@ -71,14 +77,39 @@
 
 				$scope.clearCart = function() {
 					$scope.carts.length = 0;
-					$window.sessionStorage.setItem("cart",JSON.stringify($scope.carts));
+					$window.sessionStorage.setItem("cart", JSON
+							.stringify($scope.carts));
 
 				};
 
 				$scope.removeItem = function(item) {
 					var index = $scope.carts.indexOf(item);
 					$scope.carts.splice(index, 1);
-					$window.sessionStorage.setItem("cart",JSON.stringify($scope.carts));
+					$window.sessionStorage.setItem("cart", JSON
+							.stringify($scope.carts));
+				};
+
+				$scope.submitOrder = function(order) {
+					$scope.cartss = JSON.parse($window.sessionStorage
+							.getItem("cart"))
+							|| [];
+					var total = JSON.parse($window.sessionStorage
+							.getItem("total"));
+					// var payload = {
+					// id : 1,
+					// title : `chicken burger`,
+					// qty : 1,
+					// total : total,
+					// userName : `here`,
+					// phone : order.phone,
+					// adress : order.address,
+					// status : `pending`
+					// };
+					console.log("hello");
+					service.submitOrder().then(function(res) {
+						$state.go("orderSuccess");
+					});
+
 				};
 			} ]);
 

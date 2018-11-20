@@ -33,6 +33,9 @@
         }).state('checkout', {
             url: '/checkout',
             templateUrl: 'resources/templates/checkout.html'
+        }).state('orderSuccess', {
+            url: '/orderSuccess',
+            templateUrl: 'resources/templates/orderSuccess.html'
         }).state('cart', {
             url: '/cart',
             templateUrl: 'resources/templates/cart.html',
@@ -80,9 +83,8 @@
         }
     }]);
 
-    app.controller('mainCtrl', ['$scope', 'appService',function ($scope, appService) {
+    app.controller('mainCtrl', ['$scope', 'appService','$window' ,function ($scope, appService,$window) {
         $scope.userLoggedIn = false;
-
         $scope.login = function (user) {
          
                 appService.login(user.userName, user.password).then(function (res) {

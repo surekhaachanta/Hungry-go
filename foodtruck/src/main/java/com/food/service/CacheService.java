@@ -11,7 +11,7 @@ public interface CacheService {
 	public List<Item> getAllItems();
 	void saveUser(User user);
 	public boolean login(String payload);
-	public void order(List<Order> order);
+	public void order(Order order);
 	void saveCart(List<Cart> cart);
 	public List<Cart> getAllCartItems();
 	

@@ -57,12 +57,12 @@ public class CacheServiceImpl implements CacheService {
 
 	@Override
 	public void saveCart(List<Cart> cart) {
-		
+
 		System.out.println("inside cart");
 
 		for (ListIterator<Cart> iter = cart.listIterator(); iter.hasNext();) {
 			Cart element = iter.next();
-			
+
 			element.setAddress("address 1");
 			element.setUserName("myname");
 			element.setPhone("7147268016");
@@ -71,16 +71,19 @@ public class CacheServiceImpl implements CacheService {
 	}
 
 	@Override
-	public void order(List<Order> order) {
-		for (ListIterator<Order> iter = order.listIterator(); iter.hasNext();) {
-			
-			Order element = iter.next();
-			element.setAddress("address 1");
-			element.setUserName("myname");
-			element.setPhone("7147268016");
-			element.setStatus("Pending");
-			orderDataService.save(element);
-		}
+	public void order(Order order) {
+		// for (ListIterator<Order> iter = order.listIterator(); iter.hasNext();) {
+
+		order.setQty(1);
+		order.setTitle("Chicken Burger");
+		order.setCategory("burger");
+		order.setAddress("address 1");
+		order.setUserName("myname");
+		order.setPhone("7147268016");
+		order.setStatus("Pending");
+		order.setTotal(30.00);
+		orderDataService.save(order);
+		// }
 	}
 
 	@Override
@@ -88,7 +91,7 @@ public class CacheServiceImpl implements CacheService {
 	public List<Cart> getAllCartItems() {
 		System.out.println("Iniside getAllItems");
 		List<Cart> cartList = new ArrayList<>();
-	cartDataService.findAll().forEach(cartList::add);
+		cartDataService.findAll().forEach(cartList::add);
 		return cartList;
 	}
 

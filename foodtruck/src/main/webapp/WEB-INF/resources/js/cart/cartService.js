@@ -2,9 +2,9 @@
     var app = angular.module('foodtruck');
 
     app.service('cartService', ['$http', '$q', function ($http, $q) {
-    	 this.getAllCartItems = function () {
+    	 this.submitOrder = function () {
              var defer = $q.defer();
-             $http.get('/menu/getCart').then(function (res) {
+             $http.get('/menu/order').then(function (res) {
                  defer.resolve(res.data);
              }, function () {
                  defer.reject();

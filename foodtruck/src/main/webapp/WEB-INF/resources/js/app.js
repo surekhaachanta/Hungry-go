@@ -86,11 +86,9 @@
 				console.log("check here" + res.data);
 				if (res.data)
 					defer.resolve(res.data);
-				else
-					{
-					
+				else {
 					defer.reject();
-					}
+				}
 			});
 			return defer.promise;
 		};
@@ -99,7 +97,6 @@
 			var defer = $q.defer();
 			$http.post('/user/register', formData).then(function(res) {
 				defer.resolve(res.data);
-				console.log(res.data + "bbbb");
 			}, function() {
 				defer.reject();
 			});
@@ -111,25 +108,24 @@
 			'$scope',
 			'appService',
 			'$window',
-			'$state',
-			function($scope, appService, $window, $state) {
-				$scope.login = true;
-				$scope.register = true;
+			'$state','$timeout',
+			function($scope, appService, $window, $state, $timeout) {
 				$scope.userLoggedIn = false;
-				$scope.loginError= false;
+				$scope.loginError = false;
 				$scope.login = function(user) {
 
 					appService.login(user.userName, user.password).then(
 							function success(res) {
 								$scope.userLoggedIn = true;
-								$scope.login = false;
-								$scope.register = false;
 								$scope.userName = user.userName;
-								$scope.loginError=false;
-
 							}, function failed(error) {
 								$scope.userLoggedIn = false;
-								$scope.loginError=true;
+								$scope.loginError = true;
+								 $timeout(function() {
+							         $scope.loginError = false;
+							      }, 2500);
+								user.userName="";
+								user.password="";
 							});
 
 				};
@@ -144,10 +140,12 @@
 					console.log(payload);
 					appService.register(payload).then(function(res) {
 						$scope.userLoggedIn = true;
-						$scope.login = false;
-						$scope.register = false;
 					});
 
-				}
+				};
+
+				$scope.signOut = function() {
+					$scope.userLoggedIn = false;
+				};
 			} ]);
 })();

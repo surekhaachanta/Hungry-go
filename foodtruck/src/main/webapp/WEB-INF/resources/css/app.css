@@ -45,11 +45,12 @@
 }
 
 .btncart {
-	background-color: tomato;
 	color: white;
 	text-transform: capitalize;
-	height: 23;
+	height: 50;
+	width:40%;
 	padding-top: 1.2px
+	
 }
 
 .navg {
@@ -195,9 +196,7 @@ label {
   background-color: #45a049;
 }
 
-a {
-  color: #2196F3;
-}
+
 
 hr {
   border: 1px solid lightgrey;
@@ -217,4 +216,3 @@ span.price {
     margin-bottom: 20px;
   }
 }
-</style>

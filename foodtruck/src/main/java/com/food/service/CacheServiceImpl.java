@@ -3,6 +3,7 @@ package com.food.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -48,18 +49,29 @@ public class CacheServiceImpl implements CacheService {
 	}
 
 	@Override
-	public boolean login(String user) {
+	public boolean login(User user) {
 		System.out.println(user);
 		boolean isValidUser = false;
-		return isValidUser;
+		try {
+			Optional<User> userObj = userDataService.findByNameAndPassword(user.getUserName(), user.getPassword());
+			System.out.println(userObj);
+			if (userObj.get().getEmail() != null) {
+				isValidUser = true;
+				System.out.println("inside after finding user");
+			}
 
+		} catch (Exception e) {
+			isValidUser = false;
+			System.out.println("inside exception");
+			System.out.println(e.getMessage());
+		}
+
+		return isValidUser;
 	}
 
 	@Override
 	public void saveCart(List<Cart> cart) {
-
 		System.out.println("inside cart");
-
 		for (ListIterator<Cart> iter = cart.listIterator(); iter.hasNext();) {
 			Cart element = iter.next();
 

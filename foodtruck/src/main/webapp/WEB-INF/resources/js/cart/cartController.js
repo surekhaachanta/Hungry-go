@@ -118,7 +118,10 @@
 					console.log("hello");
 					service.submitOrder(payload).then(function(res) {
 						$state.go("orderSuccess");
-					});
+						$scope.carts.length = 0;
+						$window.sessionStorage.setItem("cart", JSON
+								.stringify($scope.carts));
+						});
 
 				};
 			} ]);

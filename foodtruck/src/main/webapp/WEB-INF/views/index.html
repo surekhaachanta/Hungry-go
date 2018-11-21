@@ -16,7 +16,8 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 </head>
 <body class="content-area" ng-app="foodtruck"
 	ng-controller="mainCtrl as mainCtrl">
@@ -30,7 +31,7 @@
 			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbar1">
+		<div class="collapse navbar-collapse" id="navbar1"  style="padding-right:0px;">
 			<ul class="navbar-nav  ml-auto w-100 justify-content-end navg">
 				<li class="nav-item active"><a class="nav-link" ui-sref="home">Home</a>
 				</li>
@@ -38,12 +39,13 @@
 				<li class="nav-item"><a class="nav-link" ui-sref="about">About</a></li>
 				<li class="nav-item"><a class="nav-link" ui-sref="contact">Contact</a>
 				</li>
-				<li class="nav-item dropdown"><a href="#"
+				<li class="nav-item dropdown" ng-show="register"><a href="#"
 					class="nav-item nav-link dropdown-toggle mr-md-2"
-					data-toggle="dropdown"> Register <span class="caret"></span>
+					data-toggle="dropdown" ng-model="registered"> Register <span
+						class="caret"></span>
 				</a>
 					<ul class="dropdown-menu dropdown-menu-right" role="menu">
-						<div class="col-md-12 reg-dropdown-menu">
+						<div class="col-md-12 reg-dropdown-menu" >
 							<form autocomplete="off" name="registerForm"
 								ng-submit="register(newUser)" novalidate>
 								<div class="form-group">
@@ -80,12 +82,13 @@
 							</form>
 						</div>
 					</ul></li>
-				<li class="nav-item dropdown"><a href="#"
+				<li class="nav-item dropdown" ng-show="login"><a href="#"
 					class="nav-item nav-link dropdown-toggle mr-md-2"
 					data-toggle="dropdown"> Login <span class="caret"></span>
 				</a>
 					<ul class="dropdown-menu dropdown-menu-right" role="menu">
 						<div class="col-md-12 reg-dropdown-menu">
+						<div ng-show="loginError" style="color:red;">Please Check User Name & Password</div>
 							<form autocomplete="off" name="loginForm" ng-submit="login(user)"
 								novalidate>
 								<div class="form-group">
@@ -117,9 +120,16 @@
 							</form>
 						</div>
 					</ul></li>
-				<li class="nav-item"><a class="nav-link" ui-sref="cart">Cart <i class="fa fa-shopping-cart"></i></a></li>
+				<li class="nav-item"><a class="nav-link" ui-sref="cart">Cart
+						<i class="fa fa-shopping-cart"></i>
+				</a></li>
 
 			</ul>
+		</div>
+		<div style="padding-top:60px;text-transform: capitalize;">
+			<div ng-show="userLoggedIn">
+				Hello, {{userName}}<a href=""> sign out</a>
+			</div>
 		</div>
 	</nav>
 	<main role="main" class="container area">
@@ -141,6 +151,7 @@
 	<script src="/resources/js/lib/angular-ui-router.min.js"></script>
 	<script src="/resources/js/lib/ocLazyLoad.js"></script>
 	<script src="/resources/js/app.js"></script>
+
 </body>
 
 </html>

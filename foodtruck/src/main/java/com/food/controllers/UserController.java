@@ -29,16 +29,11 @@ public class UserController {
 	} 
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST, produces="application/json")
-	public boolean loginUser(@RequestBody String  payload) throws URISyntaxException{
-		try {
+	public boolean loginUser(@RequestBody User  payload) throws URISyntaxException{
+		
 			System.out.println("hereelogin");
 			return cacheService.login(payload);
-			
-		}
-		 catch(Exception e) {
-			 
-		 }
-		return false;
+		
 	} 
 	
 }

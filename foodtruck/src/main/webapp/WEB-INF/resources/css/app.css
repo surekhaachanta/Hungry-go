@@ -153,6 +153,9 @@ a {
   padding: 0 16px;
 }
 
+.rclosed{
+	 display:none;
+}
 .success{
 	Color:lightgreen;
 	font-size: 30;

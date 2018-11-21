@@ -95,18 +95,28 @@
 							|| [];
 					var total = JSON.parse($window.sessionStorage
 							.getItem("total"));
-					// var payload = {
-					// id : 1,
-					// title : `chicken burger`,
-					// qty : 1,
-					// total : total,
-					// userName : `here`,
-					// phone : order.phone,
-					// adress : order.address,
-					// status : `pending`
-					// };
+
+					var orderInfo = '';
+					for (var i = 0; i < $scope.cartss.length; i++) {
+						var item = $scope.cartss[i];
+						orderInfo = orderInfo + '['+item.title + ' '
+								+ item.category + ' '
+								+ $scope.toNumber(item.qty)+'] ';
+					}
+					console.log("infoo");
+					console.log(orderInfo);
+					var payload = {
+						orderInfo : orderInfo,
+						total : total,
+						userName : order.Fname,
+						phone : order.phone,
+						address : order.address,
+						status : 'pending'
+					};
+					console.log("payload");
+					console.log(payload);
 					console.log("hello");
-					service.submitOrder().then(function(res) {
+					service.submitOrder(payload).then(function(res) {
 						$state.go("orderSuccess");
 					});
 

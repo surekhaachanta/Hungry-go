@@ -89,6 +89,8 @@
          
                 appService.login(user.userName, user.password).then(function (res) {
                     $scope.userLoggedIn = true;
+                	$state.go("home");
+
                 });
             
         };
@@ -103,6 +105,7 @@
                 console.log(payload);
                 appService.register(payload).then(function (res) {
                 	$scope.userLoggedIn = true;
+                	$state.go("home");
                     console.log(res);
                 });
             

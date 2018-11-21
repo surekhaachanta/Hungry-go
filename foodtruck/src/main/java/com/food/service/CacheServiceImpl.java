@@ -72,18 +72,8 @@ public class CacheServiceImpl implements CacheService {
 
 	@Override
 	public void order(Order order) {
-		// for (ListIterator<Order> iter = order.listIterator(); iter.hasNext();) {
-
-		order.setQty(1);
-		order.setTitle("Chicken Burger");
-		order.setCategory("burger");
-		order.setAddress("address 1");
-		order.setUserName("myname");
-		order.setPhone("7147268016");
-		order.setStatus("Pending");
-		order.setTotal(30.00);
+		System.out.println(order);
 		orderDataService.save(order);
-		// }
 	}
 
 	@Override

@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "orderDetails")
@@ -14,11 +13,6 @@ public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-
-	private int qty;
-
-	@NotNull
-	private String title;
 
 	private Double total;
 
@@ -30,7 +24,7 @@ public class Order {
 
 	private String status;
 
-	private String category;
+	private String orderInfo;
 
 	public int getId() {
 		return id;
@@ -40,21 +34,7 @@ public class Order {
 		this.id = id;
 	}
 
-	public int getQty() {
-		return qty;
-	}
-
-	public void setQty(int qty) {
-		this.qty = qty;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
+	
 
 	public Double getTotal() {
 		return total;
@@ -95,11 +75,11 @@ public class Order {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getCategory() {
-		return category;
+	public String getOrderInfo() {
+		return orderInfo;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setOrderInfo(String order) {
+		this.orderInfo = order;
 	}
 }

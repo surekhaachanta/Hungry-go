@@ -100,9 +100,10 @@
 					for (var i = 0; i < $scope.cartss.length; i++) {
 						var item = $scope.cartss[i];
 						orderInfo = orderInfo + '['+item.title + ' '
-								+ item.category + ' '
+								+ item.category + ' qty - '
 								+ $scope.toNumber(item.qty)+'] ';
 					}
+					
 					console.log("infoo");
 					console.log(orderInfo);
 					var payload = {
@@ -110,18 +111,20 @@
 						total : total,
 						userName : order.Fname,
 						phone : order.phone,
+						city : order.city,
+						truck : order.city + ' truck',
 						address : order.address,
 						status : 'pending'
 					};
 					console.log("payload");
 					console.log(payload);
-					console.log("hello");
 					service.submitOrder(payload).then(function(res) {
-						$state.go("orderSuccess");
+						
 						$scope.carts.length = 0;
 						$window.sessionStorage.setItem("cart", JSON
 								.stringify($scope.carts));
 						});
+					$state.go("orderSuccess");
 
 				};
 			} ]);

@@ -1,5 +1,6 @@
 package com.food.models;
 
+import java.sql.Timestamp;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +26,12 @@ public class Order {
 	private String status;
 
 	private String orderInfo;
+	
+	private String truck;
+	
+	private String city;
+	
+	private Timestamp time;
 
 	public int getId() {
 		return id;
@@ -81,5 +88,29 @@ public class Order {
 
 	public void setOrderInfo(String order) {
 		this.orderInfo = order;
+	}
+
+	public String getTruck() {
+		return truck;
+	}
+
+	public void setTruck(String truck) {
+		this.truck = truck;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public Timestamp getTime() {
+		return time;
+	}
+
+	public void setTime(Timestamp time) {
+		this.time = time;
 	}
 }

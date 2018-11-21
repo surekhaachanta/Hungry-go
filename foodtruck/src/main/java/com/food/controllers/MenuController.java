@@ -2,7 +2,6 @@ package com.food.controllers;
 
 import java.net.URISyntaxException;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +23,22 @@ public class MenuController {
 		return cacheService.getAllItems();
 	}
 
+	@RequestMapping(value = "/orders", method = RequestMethod.GET)
+	public List<Order> getAllOrders() {
+		return cacheService.getAllorders();
+	}
+	
+	@RequestMapping(value = "/status", method = RequestMethod.POST)
+	public int changeStatus(@RequestBody Order order) throws URISyntaxException {
+		return cacheService.changeStatus(order);
+	}
+
+
+	@RequestMapping(value = "/changeTruck", method = RequestMethod.POST)
+	public int changeTruck(@RequestBody Order order) throws URISyntaxException {
+		return cacheService.changeTruck(order);
+	}
+	
 	@RequestMapping(value = "/order", method = RequestMethod.POST)
 	public void Order(@RequestBody Order order) throws URISyntaxException {
 		System.out.println(order);

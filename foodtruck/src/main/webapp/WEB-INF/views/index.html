@@ -34,17 +34,18 @@
 		<div class="collapse navbar-collapse" id="navbar1"
 			style="padding-right: 0px;">
 			<ul class="navbar-nav  ml-auto w-100 justify-content-end navg">
-				<li class="nav-item active"><a class="nav-link" ui-sref="home">Home</a>
+				<li class="nav-item"><a class="nav-link" ui-sref="home">Home</a>
 				</li>
-				<li class="nav-item" ng-hide="isAdmin"><a class="nav-link" ui-sref="menu">Menu</a></li>
-				<li class="nav-item" ng-show="isAdmin"><a class="nav-link" ui-sref="editMenu">Menu</a></li>
-				<li class="nav-item" ng-show="isAdmin"><a class="nav-link" ui-sref="viewOrders">Orders</a></li>
-				<li class="nav-item"><a class="nav-link" ui-sref="about">About</a></li>
-				<li class="nav-item"><a class="nav-link" ui-sref="contact">Contact</a>
+				<li class="nav-item" ng-hide="isAdmin" ui-sref-active="active"><a class="nav-link" ui-sref="menu">Menu</a></li>
+				<li class="nav-item" ng-show="isAdmin" ui-sref-active="active"><a class="nav-link" ui-sref="editMenu">Menu</a></li>
+				<li class="nav-item" ng-show="isAdmin" ui-sref-active="active"><a class="nav-link" ui-sref="viewOrders">Orders</a></li>
+				<li class="nav-item" ui-sref-active="active"><a class="nav-link" ui-sref="about">About</a></li>
+				<li class="nav-item" ui-sref-active="active"><a class="nav-link" ui-sref="contact">Contact</a>
 				</li>
 				<li class="nav-item dropdown" ng-hide="userLoggedIn"><a
 					href="#" class="nav-item nav-link dropdown-toggle mr-md-2"
-					data-toggle="dropdown" ng-model="registered"> Register <span
+					data-toggle="dropdown" ng-model="registered"
+					ui-sref-active="active"> Register <span
 						class="caret"></span>
 				</a>
 					<div class="dropdown-menu dropdown-menu-right" role="menu">
@@ -87,7 +88,8 @@
 					</div></li>
 				<li class="nav-item dropdown" ng-hide="userLoggedIn"><a
 					href="#" class="nav-item nav-link dropdown-toggle mr-md-2"
-					data-toggle="dropdown"> Login <span class="caret"></span>
+					data-toggle="dropdown"
+					ui-sref-active="active"> Login <span class="caret"></span>
 				</a>
 					<div class="dropdown-menu dropdown-menu-right" role="menu">
 						<div class="col-md-12 reg-dropdown-menu">
@@ -124,7 +126,7 @@
 							</form>
 						</div>
 					</div></li>
-				<li class="nav-item"><a class="nav-link" ui-sref="cart">Cart
+				<li class="nav-item" ui-sref-active="active"><a class="nav-link" ui-sref="cart">Cart
 						<i class="fa fa-shopping-cart"></i>
 				</a></li>
 

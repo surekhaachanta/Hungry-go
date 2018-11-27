@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
 	private static final String[] CLASSPATH_RESOURCE_LOCATIONS = { "classpath:/META-INF/resources/",
-            "classpath:/resources/", "classpath:/static/","classpath:/resoursces/static/", "classpath:/public/" };
+            "classpath:/resources/", "classpath:/static/","classpath:/resoursces/views/", "classpath:/public/" };
 
     @Bean
     public ViewResolver getViewResolver() {

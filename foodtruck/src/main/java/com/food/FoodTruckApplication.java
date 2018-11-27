@@ -9,6 +9,8 @@ import org.springframework.cache.annotation.EnableCaching;
 public class FoodTruckApplication {
 
 	public static void main(String[] args) {
+		String cwd = System.getProperty("user.dir");
+        System.out.println("Current working directory@@@@@@@@@@@@ : " + cwd);
 		SpringApplication.run(FoodTruckApplication.class, args);
 	}
 }

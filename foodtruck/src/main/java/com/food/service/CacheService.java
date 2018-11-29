@@ -6,13 +6,22 @@ import com.food.models.Item;
 import com.food.models.Order;
 import com.food.models.User;
 
-public interface CacheService {
-	public List<Item> getAllItems();
+public
+interface CacheService {
+	List<Item> getAllItems();
+
+	void evictMenuItems();
+
 	void saveUser(User user);
-	public void order(Order order);
+
+	void order(Order order);
+
 	boolean login(User user);
-	public List<Order> getAllorders();
-	public int changeStatus(Order order);
-	public int changeTruck(Order order);
-	
+
+	List<Order> getAllorders();
+
+	int changeStatus(Order order);
+
+	int changeTruck(Order order);
+
 }

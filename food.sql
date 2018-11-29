@@ -6,8 +6,6 @@ use food_truck;
 CREATE TABLE `menu` (
   `id` int(11) NOT NULL,
   `title` varchar(75) DEFAULT NULL,
-  `link` varchar(100) DEFAULT NULL,
-  `qty` int(4) Default Null,
   `price` DOUBLE(10,2) NOT NULL,
   `category` varchar(100)  NOT NULL,
   PRIMARY KEY (`id`)
@@ -32,23 +30,23 @@ CREATE TABLE `user` (
   PRIMARY KEY (`user_Name`)
 ) ;
 
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (1,'Chicken','/resources/images/Food11',8.5, 'Burger');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (2,'Veggie','/resources/images/Food11',6, 'Burger');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (3,'Beef','/resources/images/Food11',8.5, 'Burger');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (4,'Portobello Mushroom','/resources/images/Food11',6.5, 'Burger');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (5,'Turkey','/resources/images/Food11',9, 'Burger');
+INSERT INTO `menu` (`id`, `title`, `price`,`category`) VALUES (1,'Chicken',8.5, 'Burger');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (2,'Veggie',6, 'Burger');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (3,'Beef',8.5, 'Burger');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (4,'Portobello Mushroom',6.5, 'Burger');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (5,'Turkey',9, 'Burger');
 
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (6,'Fries','/resources/images/Food12',3.5, 'Fries');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (7,'Curly','/resources/images/Food13',4, 'Fries');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (8,'Waffle','/resources/images/Food13',4, 'Fries');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (9,'Chili Cheese','/resources/images/Food13',4.5, 'Fries');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (6,'Fries',3.5, 'Fries');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (7,'Curly',4, 'Fries');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (8,'Waffle',4, 'Fries');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (9,'Chili Cheese',4.5, 'Fries');
 
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (10,'Vegetal','/resources/images/Food13',6.5, 'Tacos');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (11,'Carnitas','/resources/images/Food13',6.5, 'Tacos');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (12,'Lengua','/resources/images/Food13',7.5, 'Tacos');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (13,'Asada','/resources/images/Food13',7.5, 'Tacos');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (14,'Barbacoa','/resources/images/Food13',7.5, 'Tacos');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (10,'Vegetal',6.5, 'Tacos');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (11,'Carnitas',6.5, 'Tacos');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (12,'Lengua',7.5, 'Tacos');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (13,'Asada',7.5, 'Tacos');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (14,'Barbacoa',7.5, 'Tacos');
 
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (15,'Soda','/resources/images/Food13',2.5, 'Beverages');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (16,'Coke','/resources/images/Food13',3, 'Beverages');
-INSERT INTO `menu` (`id`, `title`, `link`, `price`,`category`) VALUES (17,'Orange Juice','/resources/images/Food13',3.5, 'Beverages');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (15,'Soda',2.5, 'Beverages');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (16,'Coke',3, 'Beverages');
+INSERT INTO `menu` (`id`, `title`,  `price`,`category`) VALUES (17,'Orange Juice',3.5, 'Beverages');

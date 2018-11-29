@@ -201,6 +201,10 @@
                 console.log(payload);
                 appService.register(payload).then(function (res) {
                     $scope.userLoggedIn = true;
+                    if ($scope.userName == "admin") {
+                        $scope.isAdmin = true;
+                        console.log("admin2 " + $scope.userName);
+                    }
                     newUser.userName = "";
                     newUser.email = "";
                     newUser.password = "";

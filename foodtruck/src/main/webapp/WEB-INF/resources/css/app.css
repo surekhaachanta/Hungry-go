@@ -182,14 +182,6 @@ label {
 
 .btn {
   background-color: #4CAF50;
-  color: white;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  width: 100%;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 17px;
 }
 
 .btn:hover {
@@ -215,4 +207,13 @@ span.price {
   .col-25 {
     margin-bottom: 20px;
   }
+}
+
+.admin .editmenu .btn {
+	margin-top: 0px;
+	margin-left: 10px;
+}
+
+.admin .editmenu .selectize-input {
+	height: 2.5em;
 }

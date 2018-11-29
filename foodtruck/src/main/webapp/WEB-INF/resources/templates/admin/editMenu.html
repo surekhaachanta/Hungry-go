@@ -1,0 +1,61 @@
+<div class="editmenu">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Select menu</label>
+        <div class="col-sm-12">
+          <div class="input-group">
+            <ui-select ng-model="select.selected"
+                       theme="selectize"
+                       class="form-control"
+                       title="Choose a item">
+              <ui-select-match placeholder="Select or search a item...">{{$select.selected.title}}</ui-select-match>
+              <ui-select-choices group-by="'category'" repeat="item in menuItems | filter: $select.search">
+                <div ng-bind-html="item.title | highlight: $select.search"></div>
+                <small ng-bind-html="item.price | highlight: $select.search"></small>
+              </ui-select-choices>
+            </ui-select>
+
+            <div class="input-group-btn actionBtn" ng-if="select.selected.id > 0">
+              <div class="selection-container">
+                <button class="btn btn-success" ng-click="deleteConfirm(select.selected)">
+                  <i class="fas fa-2x fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin: 0 auto;border: 1px dashed #000;padding: 20px;">
+    <h3>Add New Item</h3>
+    <div class="row">
+      <form name="newItemForm">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" ng-model="newItem.name" ng-minlength="3" required>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label>Category</label>
+            <input type="text" name="category" class="form-control" ng-model="newItem.category" ng-minlength="3"
+                   required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label>Price</label>
+            <input type="number" name="price" class="form-control" ng-model="newItem.price" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success" ng-disabled="newItemForm.$invalid"
+                ng-click="createNewItem(newItemForm)">
+          Create
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

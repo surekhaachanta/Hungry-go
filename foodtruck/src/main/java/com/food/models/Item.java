@@ -11,13 +11,8 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private int qty;
-    
     @NotNull
     private String title;
-
-    @NotNull
-    private String link;
 
     @NotNull
     private Double price;
@@ -30,18 +25,16 @@ public class Item {
     public Item(int id) {
         this.id = id;
     }
-    
 
-    public Item(int id, String title, String link, Double price,String category,int qty) {
+
+    public Item(int id, String title, Double price,String category) {
         this.id = id;
         this.title = title;
-        this.link = link;
         this.price = price;
         this.category= category;
-        this.qty= qty;
     }
-    
-    
+
+
     public long getId() {
         return id;
     }
@@ -59,15 +52,6 @@ public class Item {
         this.title = value;
     }
 
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String value) {
-        this.link = value;
-    }
-
     public String getCategory() {
         return category;
     }
@@ -75,15 +59,19 @@ public class Item {
     public void setCategory(String category) {
         this.category = category;
     }
-    
-    public int getQty() {
-		return qty;
-	}
-	public void setQty(int qty) {
-		this.qty = qty;
+
+	@Override public
+	String toString() {
+		final StringBuilder sb = new StringBuilder("Item{");
+		sb.append("id=").append(id);
+		sb.append(", title='").append(title).append('\'');
+		sb.append(", price=").append(price);
+		sb.append(", category='").append(category).append('\'');
+		sb.append('}');
+		return sb.toString();
 	}
 
-    public Double getPrice() {
+	public Double getPrice() {
         return price;
     }
 
@@ -91,15 +79,4 @@ public class Item {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Item{");
-        sb.append("id=").append(id);
-        sb.append(", title='").append(title).append('\'');
-        sb.append(", link='").append(link).append('\'');
-        sb.append(", price=").append(price);
-        sb.append(", category='").append(category).append('\'');
-        sb.append('}');
-        return sb.toString();
-    }
 }

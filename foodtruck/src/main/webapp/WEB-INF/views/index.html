@@ -1,23 +1,23 @@
 <html>
 <head>
 <title>Hungry Go</title>
+    <link rel="stylesheet" href="/resources/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/css/lib/bootstrap.dark.theme.css">
+    <link rel="stylesheet" href="/resources/css/lib/select.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/resources/css/app.css" />
 
-<link rel="stylesheet" href="/resources/css/lib/bootstrap.min.css">
-<link rel="stylesheet"
-	href="/resources/css/lib/bootstrap.dark.theme.css">
-<link rel="stylesheet" href="/resources/css/app.css" />
-<link rel='stylesheet'
-	href='https://use.fontawesome.com/releases/v5.4.2/css/all.css'
-	integrity='sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns'
-	crossorigin='anonymous'>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+
+    <script src="/resources/js/lib/lodash.js"></script>
+    <script src="/resources/js/lib/jquery-3.2.1.slim.min.js"></script>
+    <script src="/resources/js/lib/popper.min.js"></script>
+    <script src="/resources/js/lib/bootstrap.min.js"></script>
+    <script src="/resources/js/lib/bootbox.min.js"></script>
 </head>
 <body class="content-area" ng-app="foodtruck"
 	ng-controller="mainCtrl as mainCtrl">
@@ -37,7 +37,7 @@
 				<li class="nav-item"><a class="nav-link" ui-sref="home">Home</a>
 				</li>
 				<li class="nav-item" ng-hide="isAdmin" ui-sref-active="active"><a class="nav-link" ui-sref="menu">Menu</a></li>
-				<li class="nav-item" ng-show="isAdmin" ui-sref-active="active"><a class="nav-link" ui-sref="editMenu">Menu</a></li>
+				<li class="nav-item" ng-show="isAdmin" ui-sref-active="active"><a class="nav-link" ui-sref="admin.editMenu">Menu</a></li>
 				<li class="nav-item" ng-show="isAdmin" ui-sref-active="active"><a class="nav-link" ui-sref="viewOrders">Orders</a></li>
 				<li class="nav-item" ui-sref-active="active"><a class="nav-link" ui-sref="about">About</a></li>
 				<li class="nav-item" ui-sref-active="active"><a class="nav-link" ui-sref="contact">Contact</a>
@@ -146,7 +146,7 @@
 		</div>
 	</nav>
 	<main role="main" class="container area">
-	<div ui-view></div>
+	<div class="common-area" ui-view></div>
 	</main>
 
 	<nav class="navbar navbar-dark bg-primary footer">
@@ -157,11 +157,10 @@
 			href="https://docs.google.com/presentation/d/1siF0JY-hcL7esCJ-GUKpSObzXy6imah2kiEafsJqkR8/edit#slide=id.p">
 			Demo </a>
 	</nav>
-	<script src="/resources/js/lib/jquery-3.2.1.slim.min.js"></script>
-	<script src="/resources/js/lib/popper.min.js"></script>
-	<script src="/resources/js/lib/bootstrap.min.js"></script>
 	<script src="./webjars/angularjs/1.5.7/angular.js"></script>
+    <script src="./webjars/angularjs/1.5.7/angular-sanitize.js"></script>
 	<script src="/resources/js/lib/angular-ui-router.min.js"></script>
+    <script src="/resources/js/lib/select.js"></script>
 	<script src="/resources/js/lib/ocLazyLoad.js"></script>
 	<script src="/resources/js/app.js"></script>
 

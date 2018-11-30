@@ -13,6 +13,18 @@
             return defer.promise;
         };
         
+        this.getAllCrews = function () {
+            var defer = $q.defer();
+            console.log("in service");
+            $http.get('/menu/getCrews').then(function (res) {
+                defer.resolve(res.data);
+            }, function () {
+                defer.reject();
+            })
+            return defer.promise;
+        };
+        
+        
         this.changeStatus = function (order) {
             var defer = $q.defer();
             console.log("in c service");
@@ -28,6 +40,17 @@
             var defer = $q.defer();
             console.log("in order truck service");
             $http.post('/menu/changeTruck',order).then(function (res) {
+                defer.resolve(res.data);
+            }, function () {
+                defer.reject();
+            })
+            return defer.promise;
+        };
+        
+        this.changeCrew = function (crew) {
+            var defer = $q.defer();
+            console.log("in crew truck service");
+            $http.post('/menu/changeCrew',crew).then(function (res) {
                 defer.resolve(res.data);
             }, function () {
                 defer.reject();

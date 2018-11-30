@@ -32,9 +32,8 @@
 
 .viewCenter {
 	position: absolute;
-	top: 40%;
-	left: 40%;
-	transform: translate(-50%, -50%);
+	top: 38%;
+	left: 33%;
 	color: white;
 	font-size: 50px;
 }
@@ -42,14 +41,15 @@
 .btnn {
 	background-color: tomato;
 	color: white;
+	width: 150;
 }
 
 .btncart {
 	color: white;
 	text-transform: capitalize;
-	height: 50;
-	width:40%;
-	padding-top: 1.2px
+	height: 40;
+	width:250;
+	padding-top: 1.2px;
 	
 }
 
@@ -103,7 +103,7 @@ a {
 }
 
 .info-link {
-	background: grey;
+	background: #4CAF50;
 }
 
 .card-img-top {
@@ -129,7 +129,7 @@ a {
 	overflow: hidden;
 	background: none !important;
 	height: 300px;
-	width: 400px;
+	width: 500px;
 }
 
 
@@ -167,6 +167,7 @@ input[type=text] {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  height: 35px;
 }
 
 label {

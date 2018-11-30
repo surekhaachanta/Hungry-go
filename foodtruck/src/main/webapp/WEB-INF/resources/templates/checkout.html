@@ -6,48 +6,48 @@
 					<div class="col-50">
 						<h3>Billing Address</h3>
 						<label for="fname"><i class="fa fa-user"></i> Full Name</label> <input
-							type="text" id="fname" name="firstname" placeholder="John M. Doe" ng-model="order.Fname">
-						<label for="phone"><i class="fa fa-envelope"></i> Phone No</label> <input
-							type="text" id="phone" name="phone"
-							placeholder="7899877890" ng-model="order.phone"> <label for="adr"><i
+							type="text" id="fname" name="firstname" placeholder="John M. Doe"
+							ng-model="order.Fname"> <label for="email"><i
+							class="fa fa-envelope"></i> Email</label> <input type="text" id="email"
+							name="email" placeholder="sample@gmail.com"
+							ng-model="order.email"> <label for="adr"><i
 							class="fa fa-address-card-o"></i> Address</label> <input type="text"
-							id="adr" name="address" placeholder="542 W. 15th Street" ng-model="order.address">
-						<label for="city"><i class="fa fa-institution"></i> City</label> <input
-							type="text" id="city" name="city" placeholder="New York" ng-model="order.city">
-
-						<div class="row">
-							<div class="col-50">
-								<label for="state">State</label> <input type="text" id="state"
-									name="state" placeholder="NY">
-							</div>
-							<div class="col-50">
-								<label for="zip">Zip</label> <input type="text" id="zip"
-									name="zip" placeholder="10001">
-							</div>
-						</div>
+							id="adr" name="address" placeholder="542 W. 15th Street"
+							ng-model="order.address"> <label for="city"><i
+							class="fa fa-institution"></i> City</label> <input type="text" id="city"
+							name="city" placeholder="New York" ng-model="order.city">
 					</div>
 
 					<div class="col-50">
-						<h3>Payment</h3>
-						<label for="fname">Accepted Cards</label>
-						<div class="icon-container">
-							<i class="fa fa-cc-visa" style="color: navy;"></i> <i
-								class="fa fa-cc-amex" style="color: blue;"></i> <i
-								class="fa fa-cc-mastercard" style="color: red;"></i> <i
-								class="fa fa-cc-discover" style="color: orange;"></i>
+						<div class="row">
+							<div class="col-25">
+								<h3>Payment</h3>
+							</div>
+							<div class="col-25">
+								<label for="fname" style="font-size: 16px;">Accepted
+									Cards:</label>
+							</div>
+							<div class="col-25">
+									<i class="fa fa-cc-visa" style="color: navy;"></i> <i
+										class="fa fa-cc-amex" style="color: blue;"></i> <i
+										class="fa fa-cc-mastercard" style="color: red;"></i> <i
+										class="fa fa-cc-discover" style="color: orange;"></i>
+							</div>
 						</div>
 						<label for="cname">Name on Card</label> <input type="text"
 							id="cname" name="cardname" placeholder="John More Doe"> <label
 							for="ccnum">Credit card number</label> <input type="text"
 							id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-						<label for="expmonth">Exp Month</label> <input type="text"
-							id="expmonth" name="expmonth" placeholder="September">
 						<div class="row">
-							<div class="col-50">
+							<div class="col-25">
+								<label for="expmonth">Exp Month</label> <input type="text"
+									id="expmonth" name="expmonth" placeholder="September">
+							</div>
+							<div class="col-25">
 								<label for="expyear">Exp Year</label> <input type="text"
 									id="expyear" name="expyear" placeholder="2018">
 							</div>
-							<div class="col-50">
+							<div class="col-25">
 								<label for="cvv">CVV</label> <input type="text" id="cvv"
 									name="cvv" placeholder="352">
 							</div>
@@ -58,7 +58,10 @@
 				<label> <input type="checkbox" checked="checked"
 					name="sameadr"> Shipping address same as billing
 				</label>
-				<input type="submit" class="btn" value="Order Now">
+				<button class="btn-danger btncart" ui-sref="cart"><<
+					Previous</button>
+				<input type="submit" class="btn-success btncart"
+					style="float: right;" value="Order Now >>">
 
 			</form>
 		</div>

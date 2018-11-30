@@ -110,7 +110,7 @@
 						orderInfo : orderInfo,
 						total : total,
 						userName : order.Fname,
-						phone : order.phone,
+						email : order.email,
 						city : order.city,
 						truck : order.city + ' truck',
 						address : order.address,

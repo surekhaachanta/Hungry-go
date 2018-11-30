@@ -14,8 +14,9 @@
 				src="/resources/images/homepage/Burger.jpg" alt="First slide">
 			<div class="centered">Order Now</div>
 			<div class="viewCenter">
-				<input type="submit" name="view-menu" id="view-menu" tabindex="4"
-					class="form-control btn btnn" value="View Menu">
+				<button name="view-menu" id="view-menu"
+					class="form-control btn btnn" ui-sref="menu">View Menu</button>
+
 			</div>
 		</div>
 		<div class="carousel-item">
@@ -44,35 +45,86 @@
 </div>
 <div class="card">
 	<div class="card-body">
-		<div class="row">
+		<div class="row" ng-hide="isAdmin">
 			<div class="column">
 				<img class="img" alt="picture" src="/resources/images/serving.jpg"
 					style="height: 400px; width: 500px;">
 			</div>
 			<div class="column">
-				<p>Hungry-Go serves Latin American street food. The fresh,
-					gourmet cuisine ranges from traditional Mexican tacos and tamales
-					to less familiar cachapas. With one food truck in Pomona and
-					another in Brea we are expanding our business</p>
+				<p>Hungry-Go serves American street food. The fresh, gourmet
+					cuisine ranges from traditional Mexican tacos and Burgers to Fries.
+					With food trucks in Pomona and Diamond Bar and Brea we are
+					expanding our business.We commit to doing better In our our food,
+					and our neighborhoods.</p>
 			</div>
 		</div>
-		<div class="row">
-			<div class="column mapouter">
+		<div>
+			<div class="row" ng-show="isAdmin">
+				<div class="col-md-4">
+				<div style="background-color:skyblue;">
+					<div style="font-size: 30px; color: black; font-weight: bold;">Pomona
+						Truck</div>
+					<div>
+					<a ui-sref="viewPomona"><img class="img" alt="picture" src="/resources/images/Truck.jpg"
+							style="height: 200px; width: 200px;"></a>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-4"  >
+				<div style="background-color:skyblue;">
+					<div style="font-size: 30px; color: black; font-weight: bold;">Diamond
+						Bar Truck</div>
+					<div>
+						<a ui-sref="viewdbBar"><img class="img" alt="picture" src="/resources/images/Truck.jpg"
+							style="height: 200px; width: 200px;"></a>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-4"  style="background-color:skyblue;">
+					<div style="font-size: 30px; color: black; font-weight: bold;">Brea
+						Truck</div>
+					<div>
+					<a ui-sref="viewBrea">	<img class="img" alt="picture" src="/resources/images/Truck.jpg"
+							style="height: 200px; width: 200px;"></a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="row" ng-hide="isAdmin">
+			<div class="column">
 				<div class="gmap_canvas">
-					<iframe width="600" height="500" id="gmap_canvas"
+					<iframe width="500px" height="500" id="gmap_canvas"
 						src="https://maps.google.com/maps?q=cal%20poly%20pomona&t=&z=13&ie=UTF8&iwloc=&output=embed"
 						frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 					<a href="https://www.pureblack.de">pureblack.de</a>
 				</div>
-
 			</div>
 
-			<div class="column">
-				<i class="fas fa-map-marker-alt"
-					style="color: red; font-size: 20px;"></i>
-				<p style="color: red; font-size: 20px;">1609 w imperial rd Brea,
-					CA 92835</p>
+			<div class="column" >
+				<div>Today's Truck Locations:</div>
+				<div></div>
+				<div>
+					<i class="fas fa-map-marker-alt"
+						style="color: red; font-size: 20px; float: left;"></i>
+					<p style="color: red; font-size: 20px;">3801 W Temple Av,
+						Pomona CA 91768</p>
+				</div>
+				<div>
+					<i class="fas fa-map-marker-alt"
+						style="color: red; font-size: 20px; float: left;"></i>
+					<p style="color: red; font-size: 20px;">1609 W Imperial Rd,
+						Brea CA 92835</p>
+				</div>
+				<div>
+					<i class="fas fa-map-marker-alt"
+						style="color: red; font-size: 20px; float: left;"></i>
+					<p style="color: red; font-size: 20px;">1345 W Diamond Bar
+						Blvd, Diamond Bar CA 92835</p>
+				</div>
 			</div>
+			<div class="column"></div>
+			<div class="column"></div>
 
 		</div>
 	</div>

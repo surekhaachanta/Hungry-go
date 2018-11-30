@@ -2,6 +2,7 @@ package com.food.service;
 
 import java.util.List;
 
+import com.food.models.Crew;
 import com.food.models.Item;
 import com.food.models.Order;
 import com.food.models.User;
@@ -23,5 +24,9 @@ interface CacheService {
 	int changeStatus(Order order);
 
 	int changeTruck(Order order);
+
+	List<Crew> getAllCrews();
+
+	int changeCrew(Crew crew);
 
 }

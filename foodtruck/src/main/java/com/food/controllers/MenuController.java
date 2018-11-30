@@ -3,13 +3,15 @@ package com.food.controllers;
 import java.net.URISyntaxException;
 import java.util.List;
 
-import com.food.dao.ItemDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.food.dao.ItemDataService;
+import com.food.models.Crew;
 import com.food.models.Item;
 import com.food.models.Order;
 import com.food.service.CacheService;
@@ -60,6 +62,11 @@ public class MenuController {
 	public List<Order> getAllOrders() {
 		return cacheService.getAllorders();
 	}
+	
+	@RequestMapping(value = "/getCrews", method = RequestMethod.GET)
+	public List<Crew> getAllCrews() {
+		return cacheService.getAllCrews();
+	}
 
 	@RequestMapping(value = "/status", method = RequestMethod.POST)
 	public int changeStatus(@RequestBody Order order) throws URISyntaxException {
@@ -76,6 +83,11 @@ public class MenuController {
 	public void Order(@RequestBody Order order) throws URISyntaxException {
 		System.out.println(order);
 		cacheService.order(order);
+	}
+
+	@RequestMapping(value = "/changeCrew", method = RequestMethod.POST)
+	public int changeCrew(@RequestBody Crew crew) throws URISyntaxException {
+		return cacheService.changeCrew(crew);
 	}
 
 }

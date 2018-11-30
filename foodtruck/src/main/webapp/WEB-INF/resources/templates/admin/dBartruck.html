@@ -1,13 +1,38 @@
 <div ng-controller="orderCtrl" class="common-area">
-	
+	<div>
+		<h2>Crew Members:</h2>
+		<table class="cart-table table-bordered">
+			<!-- header -->
+			<tr>
+				<td><b>Member Name</b></td>
+				<td><b>Role</b></td>
+				<td><b>Email</b></td>
+				<td><b>Truck</b></td>
+			</tr>
+
+			<!-- crew members -->
+			<tr ng-repeat="crew in crews" ng-if='"diamond bar truck" === crew.truck'>
+				<td>{{crew.name}}</td>
+				<td>{{crew.role}}</td>
+				<td>{{crew.email}}</td>
+				<td><select ng-change="changeCrew(crew,ctruck)" ng-model="ctruck">
+						<option value="{{crew.truck}}" selected>{{crew.truck}}</option>
+						<option value="pomona truck">Pomona truck</option>
+						<option value="brea truck">Brea truck</option>
+						<option value="diamond bar truck">Diamond Bar truck</option>
+				</select></td>
+			</tr>
+		</table>
+	</div>
 	<div>
 		<h2>Pending Orders:</h2>
 		<!-- items -->
 		<div>
 			<table class="cart-table table-bordered">
+
 				<!-- header -->
 				<tr>
-					<td><b>Details</b></td>
+					<td><b>Order Details</b></td>
 					<td><b>Time</b></td>
 					<td><b>Customer Name</b></td>
 					<td><b>Address</b></td>
@@ -21,7 +46,8 @@
 					<td class="tdCenter" colspan="4">No Orders Pending</td>
 				</tr>
 				<!-- cart items -->
-				<tr ng-repeat="order in orders">
+				<tr ng-repeat="order in orders"
+					ng-if='"diamond bar truck" === order.truck'>
 					<td>{{order.orderInfo}}</td>
 					<td>{{order.time | date: 'M/d/yy h:mm:ss a'}}</td>
 					<td>{{order.userName}}</td>

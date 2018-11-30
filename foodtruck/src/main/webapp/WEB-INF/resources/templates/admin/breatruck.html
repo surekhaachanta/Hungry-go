@@ -1,5 +1,23 @@
 <div ng-controller="orderCtrl" class="common-area">
-	<div>
+<h2 style="margin-left:400px;">Brea TRUCK</h2>
+<br/>
+
+	<div class="row">
+		<div class="col-25" style="float: left; color: black">
+			<button class="btn-success btn btncart" ui-sref="viewPomona">Check
+				Pomona truck</button>
+		</div>
+		<div class="col-25">
+			<button class="btn-success btn btncart" style="float: right;"
+				ui-sref="viewdbBar">Check Diamond Bar truck</button>
+		</div>
+	</div>
+	<div class="row">
+		<div>
+			<br />
+		</div>
+	</div>
+	<div class="row">
 		<h2>Crew Members:</h2>
 		<table class="cart-table table-bordered">
 			<!-- header -->
@@ -15,7 +33,8 @@
 				<td>{{crew.name}}</td>
 				<td>{{crew.role}}</td>
 				<td>{{crew.email}}</td>
-				<td><select ng-change="changeCrew(crew,ctruck)" ng-model="ctruck">
+				<td><select ng-change="changeCrew(crew,ctruck)"
+					ng-model="ctruck">
 						<option value="{{crew.truck}}" selected>{{crew.truck}}</option>
 						<option value="pomona truck">Pomona truck</option>
 						<option value="brea truck">Brea truck</option>
@@ -29,7 +48,6 @@
 		<!-- items -->
 		<div>
 			<table class="cart-table table-bordered">
-
 				<!-- header -->
 				<tr>
 					<td><b>Order Details</b></td>
@@ -46,7 +64,8 @@
 					<td class="tdCenter" colspan="4">No Orders Pending</td>
 				</tr>
 				<!-- cart items -->
-				<tr ng-repeat="order in orders" ng-if='"brea truck" === order.truck'>
+				<tr ng-repeat="order in orders"
+					ng-if='"brea truck" === order.truck'>
 					<td>{{order.orderInfo}}</td>
 					<td>{{order.time | date: 'M/d/yy h:mm:ss a'}}</td>
 					<td>{{order.userName}}</td>
@@ -56,7 +75,7 @@
 							<option value="{{order.truck}}" selected>{{order.truck}}</option>
 							<option value="pomona truck">Pomona truck</option>
 							<option value="brea truck">Brea truck</option>
-							<option value="diamond bar truck">Diamond Bar truck</option>
+							<option value="diamond bar truck">Diamond Bar</option>
 					</select></td>
 					<td>{{order.status}}</td>
 					<td><button class="btn-success"
@@ -66,3 +85,4 @@
 		</div>
 	</div>
 </div>
+

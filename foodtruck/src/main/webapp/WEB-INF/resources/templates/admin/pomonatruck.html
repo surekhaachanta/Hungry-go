@@ -1,5 +1,22 @@
 <div ng-controller="orderCtrl" class="common-area">
-	<div>
+<h2 style="margin-left:400px;">POMONA TRUCK</h2>
+<br/>
+	<div class="row">
+		<div class="col-25" style="float: left; color: black">
+			<button class="btn-success btn btncart" ui-sref="viewBrea">Check
+				Brea truck</button>
+		</div>
+		<div class="col-25">
+			<button class="btn-success btn btncart" style="float: right;"
+				ui-sref="viewdbBar">Check Diamond Bar truck</button>
+		</div>
+	</div>
+	<div class="row">
+		<div>
+			<br />
+		</div>
+	</div>
+	<div class="row">
 		<h2>Crew Members:</h2>
 		<table class="cart-table table-bordered">
 			<!-- header -->
@@ -15,7 +32,8 @@
 				<td>{{crew.name}}</td>
 				<td>{{crew.role}}</td>
 				<td>{{crew.email}}</td>
-				<td><select ng-change="changeCrew(crew,ctruck)" ng-model="ctruck">
+				<td><select ng-change="changeCrew(crew,ctruck)"
+					ng-model="ctruck">
 						<option value="{{crew.truck}}" selected>{{crew.truck}}</option>
 						<option value="pomona truck">Pomona truck</option>
 						<option value="brea truck">Brea truck</option>

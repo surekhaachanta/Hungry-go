@@ -1,5 +1,5 @@
 <div id="carouselExampleIndicators" class="carousel slide"
-	data-ride="carousel">
+	data-ride="carousel" ng-hide="isAdmin">
 	<ol class="carousel-indicators">
 		<li data-target="#carouselExampleIndicators" data-slide-to="0"
 			class="active"></li>
@@ -58,74 +58,82 @@
 					and our neighborhoods.</p>
 			</div>
 		</div>
-		<div>
+		<div class="common-area">
 			<div class="row" ng-show="isAdmin">
 				<div class="col-md-4">
-				<div style="background-color:skyblue;">
-					<div style="font-size: 30px; color: black; font-weight: bold;">Pomona
-						Truck</div>
-					<div>
-					<a ui-sref="viewPomona"><img class="img" alt="picture" src="/resources/images/Truck.jpg"
-							style="height: 200px; width: 200px;"></a>
-					</div>
-					</div>
+					<a ui-sref="viewPomona">
+						<div style="background-color: skyblue;">
+							<div style="font-size: 30px; color: black; font-weight: bold;">Pomona
+								Truck</div>
+							<div>
+								<img class="img" alt="picture" src="/resources/images/Truck.jpg"
+									style="height: 200px; width: 200px;">
+							</div>
+						</div>
+					</a>
 				</div>
-				<div class="col-md-4"  >
-				<div style="background-color:skyblue;">
-					<div style="font-size: 30px; color: black; font-weight: bold;">Diamond
-						Bar Truck</div>
-					<div>
-						<a ui-sref="viewdbBar"><img class="img" alt="picture" src="/resources/images/Truck.jpg"
-							style="height: 200px; width: 200px;"></a>
-					</div>
-					</div>
+				<div class="col-md-4">
+					<a ui-sref="viewdbBar">
+						<div style="background-color: skyblue;">
+							<div style="font-size: 30px; color: black; font-weight: bold;">Diamond
+								Bar Truck</div>
+							<div>
+								<img class="img" alt="picture" src="/resources/images/Truck.jpg"
+									style="height: 200px; width: 200px;">
+							</div>
+						</div>
+					</a>
 				</div>
-				<div class="col-md-4"  style="background-color:skyblue;">
-					<div style="font-size: 30px; color: black; font-weight: bold;">Brea
-						Truck</div>
-					<div>
-					<a ui-sref="viewBrea">	<img class="img" alt="picture" src="/resources/images/Truck.jpg"
-							style="height: 200px; width: 200px;"></a>
-					</div>
-				</div>
-			</div>
-
-		</div>
-		<div class="row" ng-hide="isAdmin">
-			<div class="column">
-				<div class="gmap_canvas">
-					<iframe width="500px" height="500" id="gmap_canvas"
-						src="https://maps.google.com/maps?q=cal%20poly%20pomona&t=&z=13&ie=UTF8&iwloc=&output=embed"
-						frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-					<a href="https://www.pureblack.de">pureblack.de</a>
+				<div class="col-md-4">
+					<a ui-sref="viewBrea">
+						<div style="background-color: skyblue;">
+							<div style="font-size: 30px; color: black; font-weight: bold;">Brea
+								Truck</div>
+							<div>
+								<img class="img" alt="picture" src="/resources/images/Truck.jpg"
+									style="height: 200px; width: 200px;">
+							</div>
+						</div>
+					</a>
 				</div>
 			</div>
-
-			<div class="column" >
-				<div>Today's Truck Locations:</div>
-				<div></div>
-				<div>
-					<i class="fas fa-map-marker-alt"
-						style="color: red; font-size: 20px; float: left;"></i>
-					<p style="color: red; font-size: 20px;">3801 W Temple Av,
-						Pomona CA 91768</p>
-				</div>
-				<div>
-					<i class="fas fa-map-marker-alt"
-						style="color: red; font-size: 20px; float: left;"></i>
-					<p style="color: red; font-size: 20px;">1609 W Imperial Rd,
-						Brea CA 92835</p>
-				</div>
-				<div>
-					<i class="fas fa-map-marker-alt"
-						style="color: red; font-size: 20px; float: left;"></i>
-					<p style="color: red; font-size: 20px;">1345 W Diamond Bar
-						Blvd, Diamond Bar CA 92835</p>
-				</div>
-			</div>
-			<div class="column"></div>
-			<div class="column"></div>
-
 		</div>
 	</div>
+	<div class="row" ng-hide="isAdmin">
+		<div class="column">
+			<div class="gmap_canvas">
+				<iframe width="500px" height="500" id="gmap_canvas"
+					src="https://maps.google.com/maps?q=cal%20poly%20pomona&t=&z=13&ie=UTF8&iwloc=&output=embed"
+					frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+				<a href="https://www.pureblack.de">pureblack.de</a>
+			</div>
+		</div>
+
+		<div class="column">
+			<div>Today's Truck Locations:</div>
+			<div></div>
+			<div>
+				<i class="fas fa-map-marker-alt"
+					style="color: red; font-size: 20px; float: left;"></i>
+				<p style="color: red; font-size: 20px;">3801 W Temple Av, Pomona
+					CA 91768</p>
+			</div>
+			<div>
+				<i class="fas fa-map-marker-alt"
+					style="color: red; font-size: 20px; float: left;"></i>
+				<p style="color: red; font-size: 20px;">1609 W Imperial Rd, Brea
+					CA 92835</p>
+			</div>
+			<div>
+				<i class="fas fa-map-marker-alt"
+					style="color: red; font-size: 20px; float: left;"></i>
+				<p style="color: red; font-size: 20px;">1345 W Diamond Bar Blvd,
+					Diamond Bar CA 92835</p>
+			</div>
+		</div>
+		<div class="column"></div>
+		<div class="column"></div>
+
+	</div>
+</div>
 </div>

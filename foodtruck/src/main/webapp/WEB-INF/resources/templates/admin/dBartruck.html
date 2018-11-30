@@ -1,5 +1,22 @@
 <div ng-controller="orderCtrl" class="common-area">
-	<div>
+<h2 style="margin-left:400px;">Diamond Bar Truck</h2>
+<br/>
+	<div class="row">
+		<div class="col-25" style="float: left; color: black">
+			<button class="btn-success btn btncart" ui-sref="viewBrea">Check
+				Brea truck</button>
+		</div>
+		<div class="col-25">
+			<button class="btn-success btn btncart" style="float: right;"
+				ui-sref="viewPomona">Check Pomona truck</button>
+		</div>
+	</div>
+	<div class="row">
+		<div>
+			<br />
+		</div>
+	</div>
+	<div class="row">
 		<h2>Crew Members:</h2>
 		<table class="cart-table table-bordered">
 			<!-- header -->
@@ -11,11 +28,13 @@
 			</tr>
 
 			<!-- crew members -->
-			<tr ng-repeat="crew in crews" ng-if='"diamond bar truck" === crew.truck'>
+			<tr ng-repeat="crew in crews"
+				ng-if='"diamond bar truck" === crew.truck'>
 				<td>{{crew.name}}</td>
 				<td>{{crew.role}}</td>
 				<td>{{crew.email}}</td>
-				<td><select ng-change="changeCrew(crew,ctruck)" ng-model="ctruck">
+				<td><select ng-change="changeCrew(crew,ctruck)"
+					ng-model="ctruck">
 						<option value="{{crew.truck}}" selected>{{crew.truck}}</option>
 						<option value="pomona truck">Pomona truck</option>
 						<option value="brea truck">Brea truck</option>
@@ -29,7 +48,6 @@
 		<!-- items -->
 		<div>
 			<table class="cart-table table-bordered">
-
 				<!-- header -->
 				<tr>
 					<td><b>Order Details</b></td>
@@ -57,7 +75,7 @@
 							<option value="{{order.truck}}" selected>{{order.truck}}</option>
 							<option value="pomona truck">Pomona truck</option>
 							<option value="brea truck">Brea truck</option>
-							<option value="diamond bar truck">Diamond Bar truck</option>
+							<option value="diamond bar truck">Diamond Bar</option>
 					</select></td>
 					<td>{{order.status}}</td>
 					<td><button class="btn-success"

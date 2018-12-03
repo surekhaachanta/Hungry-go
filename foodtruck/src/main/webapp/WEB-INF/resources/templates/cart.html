@@ -1,44 +1,48 @@
-<div ng-controller="cartCtrl" class="common-area">
-	<h2>Your Cart:</h2>
-	<!-- items -->
-	<div>
-		<table class="cart-table table-bordered">
+<div class="common-area">
+	<div ng-controller="cartCtrl" >
+		<h2>Your Cart:</h2>
+		<!-- items -->
+		<div>
+			<table class="cart-table table-bordered">
 
-			<!-- header -->
-			<tr>
-				<td><b>Item</b></td>
-				<td><b>Quantity</b></td>
-				<td><b>Price</b></td>
-				<td></td>
-			</tr>
+				<!-- header -->
+				<tr>
+					<td><b>Item</b></td>
+					<td><b>Quantity</b></td>
+					<td><b>Price</b></td>
+					<td></td>
+				</tr>
 
-			<!-- empty cart message -->
-			<tr ng-hide="getTotalCount() > 0">
-				<td class="tdCenter" colspan="4">Your cart is empty.</td>
-			</tr>
+				<!-- empty cart message -->
+				<tr ng-hide="getTotalCount() > 0">
+					<td class="tdCenter" colspan="4">Your cart is empty.</td>
+				</tr>
 
-			<!-- cart items -->
-			<tr ng-repeat="item in carts">
-				<td>{{item.title}} {{item.category}}</td>
-				<td><input type="number" ng-change="changeQty(item)"
-					ng-model="item.qty" class="qty"></td>
-				<td>{{item.price * item.qty | currency}}</td>
-				<td><button class="btn-danger btn-xs" ng-click="removeItem(item);">Remove
-				Item</button> </td>
-			</tr>
+				<!-- cart items -->
+				<tr ng-repeat="item in carts">
+					<td>{{item.title}} {{item.category}}</td>
+					<td><input type="number" ng-change="changeQty(item)"
+						ng-model="item.qty" class="qty"></td>
+					<td>{{item.price * item.qty | currency}}</td>
+					<td><button class="btn-danger btn-xs"
+							ng-click="removeItem(item);">Remove Item</button></td>
+				</tr>
 
-			<!-- footer -->
-			<tr class="well">
-				<td><b>Total</b></td>
-				<td class="tdCenter"><b>{{getTotalCount()}}</b></td>
-				<td class="tdRight"><b>{{getTotal()| currency}}</b></td>
-				<td />
-			</tr>
-		</table>
+				<!-- footer -->
+				<tr class="well">
+					<td><b>Total</b></td>
+					<td class="tdCenter"><b>{{getTotalCount()}}</b></td>
+					<td class="tdRight"><b>{{getTotal()| currency}}</b></td>
+					<td />
+				</tr>
+			</table>
+		</div>
+
+		<h3>Total: {{ getTotal() | currency}}</h3>
+		<button class="btn-danger btncart" ng-click="clearCart();">Clear
+			Cart</button>
+		<button class="btn-success btncart" style="float: right;"
+			ui-sref="checkout">Check Out >></button>
 	</div>
 
-	<h3>Total: {{ getTotal() | currency}}</h3>
-	<button class="btn-danger btncart" ng-click="clearCart();">Clear Cart</button>
-	<button class="btn-success btncart" style="float: right;" ui-sref="checkout">Check Out >></button>
 </div>
-

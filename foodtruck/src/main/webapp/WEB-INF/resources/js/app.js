@@ -243,6 +243,9 @@
 				$scope.userLoggedIn = false;
 				$scope.loginError = false;
 				$scope.isAdmin = false;
+				$scope.cartItem= JSON.parse($window.sessionStorage.getItem("cartCount"))|| 0;
+				
+				console.log("sochap"+$scope.cartItem);
 				$scope.login = function(user) {
 					appService.login(user.userName, user.password).then(
 							function success(res) {

@@ -3,15 +3,15 @@
 		novalidate>
 		<div class="form-group">
 			<label for="username">First Name</label> <input type="text"
-				name="userName" id="newUserName" tabindex="1" class="form-control"
+				name="userName" id="firstName" tabindex="1" class="form-control"
 				placeholder="First Name" value="" required
 				ng-model="newUser.userName">
 		</div>
 		<div class="form-group">
 			<label for="username">Last Name</label> <input type="text"
-				name="userName" id="newUserName" tabindex="1" class="form-control"
+				name="userName" id="lastName" tabindex="1" class="form-control"
 				placeholder="Last Name" value="" required
-				ng-model="newUser.userName">
+				ng-model="newUser.lastName">
 		</div>
 		<div class="form-group">
 			<label for="username">Email</label> <input type="email" name="email"
@@ -24,10 +24,10 @@
 		</div>
 		<div class="form-group">
 		 <input type="submit"
-				name="register-submit" id="register-submit" tabindex="6"
+				name="register-submit" id="cancel" tabindex="6"
 				class="btn-danger btncart" value="cancel"
 				ng-disabled="registerForm.$invalid">
-			<input type="submit" name="register-submit" id="register-submit"
+			<input type="submit" name="submit" id="register-submit"
 				tabindex="6" class="btn-success btncart" value="Submit"
 				ng-disabled="registerForm.$invalid" style="float: right;">
 		</div>

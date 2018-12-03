@@ -18,6 +18,11 @@
     <script src="/resources/js/lib/popper.min.js"></script>
     <script src="/resources/js/lib/bootstrap.min.js"></script>
     <script src="/resources/js/lib/bootbox.min.js"></script>
+    <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-    ng-cloak {
+        display: none !important;
+    }
+</style>
 </head>
 <body class="content-area" ng-app="foodtruck"
 	ng-controller="mainCtrl as mainCtrl">
@@ -39,7 +44,7 @@
 				<li class="nav-item" ng-hide="isAdmin" ui-sref-active="active"><a class="nav-link" ui-sref="menu">Menu</a></li>
 				<li class="nav-item" ng-show="isAdmin" ui-sref-active="active"><a class="nav-link" ui-sref="admin.editMenu">Menu</a></li>
 				<li class="nav-item" ng-show="isAdmin" ui-sref-active="active"><a class="nav-link" ui-sref="viewOrders">Orders</a></li>
-				<li class="nav-item" ui-sref-active="active"><a class="nav-link" ui-sref="about">About</a></li>
+				<li class="nav-item" ui-sref-active="active"><a class="nav-link" ui-sref="about">About Us</a></li>
 				<li class="nav-item" ui-sref-active="active"><a class="nav-link" ui-sref="contact">Contact</a>
 				</li>
 				<li class="nav-item dropdown" ng-hide="userLoggedIn"><a
@@ -127,20 +132,20 @@
 						</div>
 					</div></li>
 				<li class="nav-item" ui-sref-active="active"><a class="nav-link" ui-sref="cart">Cart
-						<i class="fa fa-shopping-cart"></i>
+						<i class="fa fa-shopping-cart"></i><i  ng-cloak ng-show="cartItem > 0">({{cartItem}})</i>
 				</a></li>
 
 			</ul>
 		</div>
 		<div style="text-transform: capitalize;">
-			<div ng-show="userLoggedIn">
+			<div  ng-cloak ng-show="userLoggedIn">
 				<div class="nav-item">
 					<a class="nav-link" ui-sref="account"><i style="font-size: 25;"
 						class="fa fa-user"></i></a>
 				</div>
-				<div>Hello, {{userName}}</div>
+				<div  ng-cloak >Hello, {{userName}}</div>
 				<div>
-					<button ng-click="signOut()">sign out</button>
+					<button  ng-cloak ng-click="signOut()">sign out</button>
 				</div>
 			</div>
 		</div>
